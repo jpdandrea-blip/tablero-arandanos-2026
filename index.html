@@ -1,0 +1,1138 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<title>Cosecha Arándanos 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --page:#f4f6f8; --surface:#ffffff; --surface-2:#eef1f5;
+  --ink:#0f1419; --ink-2:#56606e; --ink-3:#8b94a3;
+  --line:#dfe4ea; --line-2:#c7cdd6;
+  --real:#2a78d6; --modelo:#eb6834; --pasado:#a8b0bb;
+  --real-wash:rgba(42,120,214,.13); --meseta-wash:rgba(235,104,52,.09);
+  --bien:#0ca30c; --mal:#d03b3b; --ojo:#b07d06;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --page:#0e1013; --surface:#181b20; --surface-2:#20242a;
+  --ink:#ffffff; --ink-2:#c2c7cf; --ink-3:#8b94a3;
+  --line:#2a2f36; --line-2:#3a4048;
+  --real:#3987e5; --modelo:#d95926; --pasado:#5b636e;
+  --real-wash:rgba(57,135,229,.18); --meseta-wash:rgba(217,89,38,.13);
+  --bien:#0ca30c; --mal:#e66767; --ojo:#fab219;
+}}
+:root[data-theme="dark"]{
+  --page:#0e1013; --surface:#181b20; --surface-2:#20242a;
+  --ink:#ffffff; --ink-2:#c2c7cf; --ink-3:#8b94a3;
+  --line:#2a2f36; --line-2:#3a4048;
+  --real:#3987e5; --modelo:#d95926; --pasado:#5b636e;
+  --real-wash:rgba(57,135,229,.18); --meseta-wash:rgba(217,89,38,.13);
+  --bien:#0ca30c; --mal:#e66767; --ojo:#fab219;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:16px;padding-block:0 56px}
+h1,h2{margin:0;text-wrap:balance;font-weight:600;letter-spacing:-.01em}
+table{border-collapse:collapse;width:100%}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--real);outline-offset:2px}
+
+/* --- encabezado + filtros --- */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--page);border-bottom:1px solid var(--line)}
+.hdr{max-width:1120px;margin:0 auto;padding:13px 16px 0;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.hdr h1{font-size:17px}
+.hdr .sem{font-family:var(--mono);font-size:12px;color:var(--ink-2);letter-spacing:.02em}
+.hdr .sep{flex:1}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:3px;border:1px solid var(--line-2);color:var(--ink-2);white-space:nowrap}
+.filtros{max-width:1120px;margin:0 auto;padding:11px 16px 12px;display:flex;align-items:center;gap:10px 22px;flex-wrap:wrap}
+.fg{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.fk{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.chips{display:flex;gap:4px;flex-wrap:wrap}
+.chipb{font:inherit;font-size:12.5px;font-weight:500;padding:4px 11px;border-radius:4px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.chipb:hover{background:var(--surface-2);color:var(--ink)}
+.chipb[aria-pressed="true"]{background:var(--real);border-color:var(--real);color:#fff}
+.chipb.mini{font-size:11.5px;padding:3px 9px;font-weight:400}
+select{font:inherit;font-family:var(--mono);font-size:12.5px;padding:4px 7px;border-radius:4px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);cursor:pointer}
+.fsep{color:var(--ink-3);font-size:12px}
+#btnReset{font:inherit;font-size:12px;padding:4px 10px;border-radius:4px;border:1px solid transparent;background:none;color:var(--ink-3);cursor:pointer;text-decoration:underline}
+#btnReset:hover{color:var(--ink)}
+
+/* --- tiles --- */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:24px}
+.tile{background:var(--surface);padding:16px 18px;min-width:0}
+.tile .k{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.tile .v{font-family:var(--mono);font-size:26px;font-weight:500;letter-spacing:-.02em;margin-top:6px;line-height:1.1}
+.tile .u{font-size:12px;color:var(--ink-2);font-family:var(--sans)}
+.tile .s{font-size:12px;color:var(--ink-2);margin-top:5px}
+@media(max-width:820px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.tiles{grid-template-columns:1fr}}
+
+/* --- estimación de cierre --- */
+.estg{display:grid;grid-template-columns:300px 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(max-width:760px){.estg{grid-template-columns:1fr}}
+.estc{background:var(--surface);padding:18px 20px;min-width:0}
+.estc .k{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.estc .big{font-family:var(--mono);font-size:40px;font-weight:500;letter-spacing:-.03em;line-height:1.05;margin-top:8px}
+.estc .big .u{font-size:15px;color:var(--ink-2);font-family:var(--sans);letter-spacing:0}
+.estc .rng{font-family:var(--mono);font-size:13px;color:var(--ink-2);margin-top:6px}
+.estc .chips2{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.estc .ln{font-size:12.5px;color:var(--ink-2);margin-top:12px;line-height:1.45}
+.estc .ln b{color:var(--ink);font-weight:600}
+.peso{height:7px;background:var(--surface-2);border:1px solid var(--line);margin-top:6px;position:relative}
+.peso i{position:absolute;inset:0 auto 0 0;background:var(--ink-2);display:block}
+.escala{margin-top:1px;border-top:none;padding:16px 20px 12px}
+.escala .k{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.eje{position:relative;height:76px;margin:6px 8px 0}
+.eje .base{position:absolute;left:0;right:0;top:36px;height:1px;background:var(--line-2)}
+.eje .banda{position:absolute;top:28px;height:17px;background:var(--real-wash);border:1px solid color-mix(in srgb,var(--real) 45%,transparent)}
+.eje .pt{position:absolute;top:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;font-size:11.5px;white-space:nowrap;color:var(--ink-2)}
+.eje .pt i{display:block;width:2px;height:19px;margin-top:6px}
+.eje .pt.est{top:23px}
+.eje .pt.est i{width:13px;height:13px;border-radius:50%;background:var(--real);margin:0}
+.eje .pt.est b{font-family:var(--mono);font-size:12px;color:var(--real);margin-top:6px}
+.ticks{position:relative;height:18px;margin:0 8px}
+.ticks span{position:absolute;transform:translateX(-50%);font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.mueve h3{font-size:14px;font-weight:600;margin:0 0 6px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.mueve p{margin:0;font-size:13px;color:var(--ink-2);line-height:1.5}
+.pasos{list-style:none;margin:10px 0 0;padding:0;counter-reset:p}
+.pasos li{counter-increment:p;padding:11px 0 11px 32px;border-top:1px solid var(--line);position:relative;font-size:13px;color:var(--ink-2);line-height:1.5}
+.pasos li::before{content:counter(p);position:absolute;left:0;top:11px;width:21px;height:21px;border-radius:50%;background:var(--surface-2);border:1px solid var(--line-2);font:600 11px/19px var(--mono);text-align:center;color:var(--ink)}
+.pasos .t{display:block;color:var(--ink);font-weight:600;font-size:12.5px;margin-bottom:2px}
+.pasos .res{font-family:var(--mono);color:var(--ink);font-weight:600;white-space:nowrap}
+.fr{width:auto;margin:6px 0 4px;font-size:12px}
+.fr td,.fr th{padding:3px 14px 3px 0;border:none;background:none;text-align:right}
+.fr th{font-size:10.5px}
+.fr td:first-child,.fr th:first-child{text-align:left}
+.fr tr.w0 td{color:var(--ink-3)}
+.esttot{background:var(--surface);border:1px solid var(--line);border-top:none;padding:14px 18px;font-size:13px;color:var(--ink-2);line-height:1.55}
+.esttot b{color:var(--ink)}
+
+/* --- secciones --- */
+section{margin-top:40px}
+.sh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+.sh h2{font-size:15px}
+.sh .n{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.06em}
+.sub{color:var(--ink-2);font-size:13px;max-width:72ch;margin:0 0 14px}
+.panel{background:var(--surface);border:1px solid var(--line)}
+.vacio{padding:26px 16px;text-align:center;color:var(--ink-3);font-size:13px;white-space:normal}
+
+/* --- tablas --- */
+.tw{overflow-x:auto}
+th,td{padding:9px 12px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
+th{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);font-weight:500;text-align:right;background:var(--surface-2)}
+th:first-child,td:first-child{text-align:left}
+tbody tr:last-child td{border-bottom:none}
+tr.tot td{font-weight:600;background:var(--surface-2);border-top:1px solid var(--line-2)}
+tr.sel td{background:var(--real-wash)}
+tr.sel td:first-child{box-shadow:inset 3px 0 0 var(--real)}
+tr.clic{cursor:pointer}
+tr.clic:hover td{background:var(--surface-2)}
+tr.curso td{background:color-mix(in srgb,var(--real) 7%,transparent)}
+td .fn{font-weight:600}
+td .fl{color:var(--ink-3);font-size:11px;font-weight:400;display:block;letter-spacing:0}
+.chip{display:inline-flex;align-items:center;gap:4px;font-family:var(--mono);font-size:12px;font-weight:500;padding:2px 7px;border-radius:3px;border:1px solid transparent}
+.chip.up{color:var(--bien);border-color:color-mix(in srgb,var(--bien) 40%,transparent);background:color-mix(in srgb,var(--bien) 9%,transparent)}
+.chip.dn{color:var(--mal);border-color:color-mix(in srgb,var(--mal) 40%,transparent);background:color-mix(in srgb,var(--mal) 9%,transparent)}
+.chip.fl{color:var(--ink-2);border-color:var(--line-2)}
+.est{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
+.est.c{color:var(--real);font-weight:600}
+
+/* --- graficos --- */
+.chart{position:relative;padding:14px 12px 6px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.tip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--line-2);box-shadow:0 4px 14px rgba(0,0,0,.13);padding:8px 10px;font-size:12px;min-width:136px;opacity:0;transition:opacity .09s;z-index:5}
+.tip .tt{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.05em;text-transform:uppercase;margin-bottom:5px}
+.tip .tr{display:flex;align-items:center;gap:7px;justify-content:space-between;margin-top:3px}
+.tip .tr span:last-child{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.sw{width:9px;height:9px;flex:0 0 9px;border-radius:2px;display:inline-block}
+.leg{display:flex;gap:16px;flex-wrap:wrap;padding:0 14px 12px;font-size:12px;color:var(--ink-2)}
+.leg > span{display:inline-flex;align-items:center;gap:6px}
+
+/* --- grupos --- */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}}
+.gcard{background:var(--surface);padding:16px 18px}
+.gcard .gt{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.gcard .gn{font-weight:600;font-size:14px}
+.gcard .gp{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.bar{height:9px;background:var(--surface-2);border:1px solid var(--line);margin-top:12px;position:relative}
+.bar i{position:absolute;inset:0 auto 0 0;background:var(--real);display:block}
+.bar b{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink-3)}
+.gcard .gl{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-2);margin-top:7px;font-family:var(--mono)}
+
+/* --- avisos --- */
+.av{list-style:none;margin:0;padding:0}
+.av li{display:flex;gap:11px;padding:11px 14px;border-bottom:1px solid var(--line);font-size:13px;color:var(--ink-2)}
+.av li:last-child{border-bottom:none}
+.av .ic{flex:0 0 auto;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.04em;padding:2px 6px;border-radius:3px;height:fit-content;border:1px solid}
+.av .ic.w{color:var(--ojo);border-color:color-mix(in srgb,var(--ojo) 45%,transparent)}
+.av .ic.i{color:var(--ink-3);border-color:var(--line-2)}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--ink-3);font-size:12px}
+footer p{margin:0 0 7px;max-width:78ch}
+footer b{color:var(--ink-2);font-weight:500}
+</style>
+
+<header>
+  <div class="hdr">
+    <h1>Cosecha de arándanos 2026</h1>
+    <span class="sem" id="hdrSem"></span>
+    <span class="sep"></span>
+    <span class="tag" id="hdrTag"></span>
+  </div>
+  <div class="filtros">
+    <div class="fg">
+      <span class="fk" id="lblCampo">Campo</span>
+      <div class="chips" id="chipsFinca" role="group" aria-labelledby="lblCampo"></div>
+    </div>
+    <div class="fg">
+      <label class="fk" for="selVariedad">Variedad</label>
+      <select id="selVariedad" aria-label="Variedad"></select>
+    </div>
+    <div class="fg">
+      <label class="fk" for="selDesde">Semanas</label>
+      <select id="selDesde" aria-label="Semana desde"></select>
+      <span class="fsep">a</span>
+      <select id="selHasta" aria-label="Semana hasta"></select>
+      <div class="chips" id="chipsPreset" role="group" aria-label="Rangos rápidos"></div>
+    </div>
+    <button type="button" id="btnReset" hidden>Limpiar filtros</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="tiles" id="tiles"></div>
+
+  <section>
+    <div class="sh"><h2>Cuánto va a dar la campaña</h2><span class="n" id="shEst"></span></div>
+    <p class="sub">Estimación propia, <b>independiente del Plan</b>: responde cuántos kilos va a dar
+      2026 de verdad, no cuántos están aprobados. Combina lo cosechado hasta la última semana cerrada con lo
+      que dio el año pasado (el área casi no cambió desde 2024), y a medida que avanza la campaña lo
+      cosechado pesa cada vez más. Se recalcula sola cada semana. No cambia con los filtros.</p>
+    <div class="estg">
+      <div class="estc" id="estCard"></div>
+      <div class="estc" style="padding:6px 8px 0"><div class="chart" style="padding:8px 6px 0"><div class="tip" id="tipEst"></div>
+        <svg id="svgEst" viewBox="0 0 700 270" role="img" aria-label="Evolución semana a semana de la estimación de cierre"></svg></div>
+        <div class="leg" style="padding:4px 8px 12px">
+          <span><svg width="22" height="9" aria-hidden="true"><rect x="0" y="1" width="22" height="7" fill="var(--real-wash)"/><line x1="0" y1="5" x2="22" y2="5" stroke="var(--real)" stroke-width="2.5"/></svg>estimación y rango 80%</span>
+          <span><svg width="22" height="9" aria-hidden="true"><circle cx="11" cy="5" r="3.5" fill="var(--modelo)"/></svg>proyección del modelo</span>
+          <span><svg width="22" height="9" aria-hidden="true"><line x1="0" y1="5" x2="22" y2="5" stroke="var(--ink-3)" stroke-width="1.5" stroke-dasharray="4 3"/></svg>Plan</span>
+          <span><svg width="22" height="9" aria-hidden="true"><line x1="0" y1="5" x2="22" y2="5" stroke="var(--pasado)" stroke-width="2"/></svg><span id="legEstAnt"></span></span>
+        </div>
+      </div>
+    </div>
+    <div class="panel escala" id="estEscala"></div>
+    <div class="sh" style="margin-top:30px"><h2 style="font-size:14px">Dónde estamos</h2></div>
+    <p class="sub" id="estDonde"></p>
+    <div class="panel tw"><table id="tEstG"></table></div>
+    <div class="sh" style="margin-top:30px"><h2 style="font-size:14px">Cómo se llega a este número</h2></div>
+    <p class="sub">Cada grupo se estima por separado con dos lecturas: <b>lo que ya se cosechó</b>
+      proyectado a campaña entera, y <b>lo que dio el año pasado</b>. Se promedian dando más peso a la que
+      tiene menos margen de error. Los números de cada paso son los de esta semana.</p>
+    <div class="grid2" id="estPasos"></div>
+    <div class="esttot" id="estTotal"></div>
+    <div id="estAreaBloque">
+      <div class="sh" style="margin-top:30px"><h2 style="font-size:14px" id="estAreaT"></h2></div>
+      <p class="sub" id="estAreaSub"></p>
+      <div class="panel tw"><table id="tEstArea"></table></div>
+      <p class="sub" style="margin-top:10px;font-size:12.5px" id="estAreaNota"></p>
+    </div>
+    <div class="sh" style="margin-top:30px"><h2 style="font-size:14px">Qué puede mover el número</h2></div>
+    <div class="grid2" id="estMueve"></div>
+    <div class="sh" style="margin-top:30px"><h2 style="font-size:14px">Cómo fue cambiando la estimación</h2></div>
+    <div class="panel tw"><table id="tEstH"></table></div>
+  </section>
+
+  <section>
+    <div class="sh"><h2>Cada campo contra el año pasado</h2><span class="n" id="shComp"></span></div>
+    <p class="sub" id="subComp"></p>
+    <div class="panel tw"><table id="tComp"></table></div>
+    <div class="leg">
+      <span><svg width="22" height="9" aria-hidden="true"><line x1="0" y1="5" x2="22" y2="5" stroke="var(--pasado)" stroke-width="2.5"/></svg><span id="legAnt"></span></span>
+      <span><svg width="22" height="9" aria-hidden="true"><line x1="0" y1="5" x2="22" y2="5" stroke="var(--real)" stroke-width="2.5"/></svg>2026 real</span>
+      <span style="color:var(--ink-3)">Clickeá una fila para filtrar por ese campo.</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><h2>Cada variedad contra el año pasado</h2><span class="n" id="shVar"></span></div>
+    <p class="sub" id="subVar"></p>
+    <div class="panel tw"><table id="tVar"></table></div>
+  </section>
+
+  <section>
+    <div class="sh"><h2>Semana a semana</h2><span class="n" id="shSem"></span></div>
+    <p class="sub" id="subSem"></p>
+    <div class="panel tw"><table id="tSem"></table></div>
+  </section>
+
+  <section>
+    <div class="sh"><h2>Lo que viene</h2><span class="n" id="shProx"></span></div>
+    <p class="sub">Kilos pronosticados por el modelo recalibrado. Es lo que hay que tener
+      cuadrilla, empaque y flete para levantar. No depende del rango de semanas elegido arriba.</p>
+    <div class="panel tw"><table id="tProx"></table></div>
+    <div class="panel" style="margin-top:1px;border-top:none"><div class="chart"><div class="tip" id="tipProx"></div><svg id="svgProx" viewBox="0 0 900 250" role="img" aria-label="Kilos pronosticados por finca para las próximas semanas"></svg></div></div>
+  </section>
+
+  <section>
+    <div class="sh"><h2>La curva</h2><span class="n" id="shCurva"></span></div>
+    <p class="sub" id="subCurva"></p>
+    <div class="panel"><div class="chart"><div class="tip" id="tipCurva"></div><svg id="svgCurva" viewBox="0 0 900 330" role="img" aria-label="Kilos por semana: año anterior real, 2026 real y 2026 modelo"></svg></div>
+      <div class="leg">
+        <span><svg width="22" height="9" aria-hidden="true"><line x1="0" y1="5" x2="22" y2="5" stroke="var(--pasado)" stroke-width="2.5"/></svg><span id="legAnt2"></span></span>
+        <span><svg width="22" height="9" aria-hidden="true"><line x1="0" y1="5" x2="22" y2="5" stroke="var(--real)" stroke-width="2.5"/></svg>2026 real</span>
+        <span><svg width="22" height="9" aria-hidden="true"><line x1="0" y1="5" x2="22" y2="5" stroke="var(--modelo)" stroke-width="2.5" stroke-dasharray="5 3"/></svg>2026 modelo</span>
+        <span id="legParcial" hidden><svg width="22" height="9" aria-hidden="true"><line x1="0" y1="5" x2="22" y2="5" stroke="var(--real)" stroke-width="2.5" stroke-dasharray="4 3"/></svg>semana en curso (parcial)</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sh"><h2>La campaña está partida en dos</h2><span class="n" id="shGrupo"></span></div>
+    <p class="sub">Snowchaser arranca primero y explica casi toda la cosecha de agosto. Que una semana
+      baje no significa que la campaña afloje: puede ser que Snowchaser se termine y el grueso todavía
+      no haya arrancado. Mirar el avance por grupo antes de sacar conclusiones. El avance de cada grupo
+      va sobre la campaña entera, no sobre el rango de semanas ni la variedad elegidos: es un
+      instrumento de grupo, y partirlo por variedad lo vacía de sentido.</p>
+    <div class="grid2" id="grupos"></div>
+    <div class="panel tw" style="margin-top:20px"><table id="tCorr"></table></div>
+  </section>
+
+  <section>
+    <div class="sh"><h2>Para revisar</h2><span class="n" id="shAv"></span></div>
+    <p class="sub">Lo que el chequeo automático encontró en los datos de esta semana.</p>
+    <div class="panel"><ul class="av" id="avisos"></ul></div>
+  </section>
+
+  <footer id="pie"></footer>
+</div>
+
+<script>
+const D = {"corte": 40, "parcial": null, "anterior": 2025, "semanas": [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53], "fincas_orden": ["TDA", "TDB", "SL", "TDBA", "FAZ", "RF"], "variedades_orden": ["SNOWCHASER", "ROCIO", "EMERALD", "FARTHING", "JEWEL", "SPRINGHIGH", "SAN JOAQUIN", "EUREKA", "KESTREL", "STAR", "MEADOWLARK", "SWEET CRISP", "PRIMADONNA", "PAMPA", "VENTURA", "BLUECRISP", "SCINTILLA", "REBEL", "ABUNDANCE", "CORONA", "SAPPHIRE", "PRELUDE", "STELLAR", "PRESTO", "DAYBREAK", "CHICKADEE"], "plan_total": 1407378.3, "generado": "05/10/2026", "por_finca": {"TOTAL": {"nombre": "Las 6 fincas", "plan": 1407378.3, "real26": [176.0, 0.0, 365.4, 1796.0, 1494.0, 38.0, 1078.0, 1758.0, 2140.0, 4862.0, 10701.0, 8134.0, 7214.0, 10690.0, 16128.0, 18668.0, 33106.0, 99936.0, 99330.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 148.0, 166.5, 314.5, 312.0, 942.5, 3733.0, 2448.0, 3188.0, 4248.0, 6076.0, 10914.0, 18535.4, 18650.2, 18781.2, 50048.4, 66890.4, 131858.0, 179273.0, 196454.0, 212950.0, 132678.0, 103242.0, 40308.0, 18760.0, 4814.0, 4550.0, 2036.0, 4236.0, 460.0, 1862.0], "modelo": [0.0, 0.0, 75.3, 199.6, 265.2, 319.5, 393.7, 1014.8, 2106.3, 2235.2, 2592.8, 3839.4, 6284.1, 10856.1, 16554.7, 21995.8, 39980.2, 84672.2, 141946.1, 191665.4, 208114.8, 201089.0, 180614.4, 127989.6, 82943.5, 45026.4, 14119.3, 4837.9, 3217.0, 3202.8, 2780.8, 6446.2], "acum26": 317614.4, "acum25": 337254.1, "total25": 1238877.1, "pico": {"semana": 42, "kg": 208114.8}}, "TDA": {"nombre": "Tierra de Arándanos", "plan": 323713.8, "real26": [0.0, 0.0, 0.0, 0.0, 84.0, 0.0, 0.0, 102.0, 438.0, 808.0, 3072.0, 1324.0, 1998.0, 2584.0, 4244.0, 6526.0, 9672.0, 26026.0, 23081.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 742.5, 652.0, 346.0, 998.0, 1552.0, 1792.0, 3630.0, 3312.0, 3094.8, 10081.2, 16114.8, 34676.0, 47892.0, 50238.0, 54950.0, 27328.0, 25294.0, 9422.0, 2648.0, 602.0, 814.0, 136.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 18.3, 51.7, 52.6, 56.1, 70.1, 331.2, 450.0, 388.6, 544.0, 914.7, 1221.9, 2201.6, 2777.5, 4901.6, 10359.5, 21021.8, 34597.8, 45471.4, 49244.7, 49134.0, 39473.8, 27533.2, 18063.9, 9838.6, 2758.5, 1502.6, 707.1, 27.0, 0.0, 0.0], "acum26": 79959.0, "acum25": 76991.3, "total25": 296315.3, "pico": {"semana": 42, "kg": 49244.7}}, "TDB": {"nombre": "Tierra de Berries", "plan": 321315.7, "real26": [0.0, 0.0, 0.0, 12.0, 0.0, 38.0, 0.0, 50.0, 192.0, 364.0, 1537.0, 1768.0, 910.0, 2076.0, 3582.0, 4488.0, 8672.0, 28594.0, 27814.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 79.5, 130.0, 98.0, 356.0, 442.0, 1038.0, 2483.6, 2850.0, 3274.8, 10346.4, 17745.2, 35020.0, 46508.0, 52100.0, 49270.0, 32038.0, 25234.0, 7534.0, 5242.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 9.5, 45.3, 60.5, 98.0, 328.8, 695.4, 1494.5, 2464.6, 3956.1, 9201.9, 20242.1, 41500.5, 49947.2, 53170.5, 43441.2, 43725.1, 26223.4, 14959.3, 6991.8, 1948.0, 515.2, 296.9, 0.0, 0.0, 0.0], "acum26": 80097.0, "acum25": 73863.5, "total25": 291789.5, "pico": {"semana": 42, "kg": 53170.5}}, "SL": {"nombre": "Santa Lucía", "plan": 114600.3, "real26": [0.0, 0.0, 365.4, 920.0, 956.0, 0.0, 600.0, 1010.0, 830.0, 1840.0, 3188.0, 2580.0, 2450.0, 3114.0, 4706.0, 2954.0, 6438.0, 10888.0, 7859.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 84.0, 60.0, 144.0, 222.0, 749.0, 1382.0, 598.0, 2044.0, 1820.0, 2886.0, 4772.0, 6370.2, 7304.4, 4590.0, 6268.8, 6877.2, 10690.0, 6272.0, 5878.0, 9795.0, 2960.0, 1442.0, 236.0, 0.0, 2424.0, 3736.0, 1900.0, 4236.0, 460.0, 1862.0], "modelo": [0.0, 0.0, 0.0, 1.0, 29.7, 58.7, 74.0, 159.5, 386.4, 882.2, 987.5, 1244.2, 2253.2, 3247.3, 5025.2, 6843.4, 9078.4, 9355.5, 11072.3, 12608.8, 11259.0, 9953.3, 5875.5, 5612.6, 3814.5, 455.3, 352.4, 349.9, 1217.9, 3175.8, 2780.8, 6446.2], "acum26": 50698.4, "acum25": 56861.6, "total25": 98062.6, "pico": {"semana": 41, "kg": 12608.8}}, "TDBA": {"nombre": "TDB Altos", "plan": 264099.3, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 250.0, 138.0, 284.0, 476.0, 254.0, 1060.0, 1912.0, 4194.0, 23056.0, 16754.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 22.0, 0.0, 0.0, 614.0, 120.0, 226.0, 34.0, 464.0, 1024.0, 2966.8, 2385.4, 6033.6, 17523.6, 18539.6, 28494.0, 35637.0, 26532.0, 32051.0, 18350.0, 14068.0, 4160.0, 1310.0, 978.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 10.7, 0.0, 0.0, 342.5, 63.1, 169.0, 147.6, 699.2, 1323.4, 2864.9, 3099.6, 5944.2, 22445.8, 28984.6, 38980.1, 38238.3, 34502.9, 31286.6, 26785.9, 15114.1, 8572.0, 3288.8, 1021.5, 214.5, 0.0, 0.0, 0.0], "acum26": 48378.0, "acum25": 78447.0, "total25": 211533.0, "pico": {"semana": 41, "kg": 38980.1}}, "FAZ": {"nombre": "Fincazul", "plan": 234716.2, "real26": [176.0, 0.0, 0.0, 864.0, 454.0, 0.0, 478.0, 596.0, 680.0, 1600.0, 2766.0, 2178.0, 1380.0, 2628.0, 2466.0, 2788.0, 4036.0, 10284.0, 11902.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 64.0, 106.5, 148.5, 90.0, 193.5, 915.0, 948.0, 474.0, 1040.0, 732.0, 2288.0, 3084.8, 2798.4, 1788.0, 5096.4, 5925.6, 12216.0, 18376.0, 31800.0, 40886.0, 30656.0, 24104.0, 12846.0, 7016.0, 810.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 57.0, 146.8, 182.8, 194.0, 249.6, 514.8, 882.2, 840.9, 794.3, 1204.1, 1410.3, 2583.3, 3420.4, 3195.2, 5090.3, 9313.9, 15196.2, 22414.6, 28908.0, 35984.5, 35686.8, 26823.1, 19968.5, 13253.0, 4422.8, 1227.1, 751.9, 0.0, 0.0, 0.0], "acum26": 45276.0, "acum25": 37908.7, "total25": 204402.7, "pico": {"semana": 43, "kg": 35984.5}}, "RF": {"nombre": "Río Famaillá", "plan": 148932.8, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 34.0, 70.0, 0.0, 94.0, 1088.0, 11920.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 732.0, 1688.0, 10762.0, 24588.0, 29906.0, 25998.0, 21346.0, 13100.0, 6110.0, 2544.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.1, 6.0, 2.1, 0.0, 306.1, 2293.0, 10594.6, 22243.3, 27294.3, 28073.2, 24566.6, 15011.4, 11023.2, 5915.8, 1348.8, 221.6, 28.7, 0.0, 0.0, 0.0], "acum26": 13206.0, "acum25": 13182.0, "total25": 136774.0, "pico": {"semana": 43, "kg": 28073.2}}}, "por_variedad": {"ABUNDANCE": {"nombre": "ABUNDANCE", "plan": 3878.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 162.0, 320.0, 1190.0, 382.0, 580.0, 188.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.1, 181.0, 566.5, 803.6, 905.8, 598.8, 580.4, 221.8, 18.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 0.0, "total25": 2822.0, "pico": {"semana": 44, "kg": 905.8}, "grupo": "RESTO", "fincas": ["TDA"]}, "BLUECRISP": {"nombre": "BLUECRISP", "plan": 4843.7, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 20.0, 0.0, 1108.0, 1118.0, 1148.0, 1106.0, 358.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 90.3, 249.1, 608.2, 959.2, 905.9, 1014.4, 782.0, 215.8, 18.9, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 0.0, "total25": 4858.0, "pico": {"semana": 46, "kg": 1014.4}, "grupo": "RESTO", "fincas": ["FAZ"]}, "CHICKADEE": {"nombre": "CHICKADEE", "plan": 0.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 124.0, 32.0, 68.0, 0.0, 120.0, 110.0, 48.0, 350.0, 186.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 21.0, 8.0, 10.0, 22.0, 0.0, 68.0, 60.0, 186.0, 0.0, 316.8, 234.0, 276.0, 284.0, 544.0, 0.0, 0.0, 196.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 1038.0, "acum25": 1201.8, "total25": 2225.8, "pico": {"semana": 0, "kg": 0.0}, "grupo": "RESTO", "fincas": ["FAZ"]}, "CORONA": {"nombre": "CORONA", "plan": 1022.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 18.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 18.0, 432.0, 252.0, 372.0, 420.0, 414.0, 318.0, 0.0, 14.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.1, 16.8, 81.7, 141.1, 139.8, 187.9, 178.2, 171.3, 88.0, 5.4, 10.6, 0.0, 0.0, 0.0], "acum26": 48.0, "acum25": 0.0, "total25": 2240.0, "pico": {"semana": 45, "kg": 187.9}, "grupo": "RESTO", "fincas": ["TDA"]}, "DAYBREAK": {"nombre": "DAYBREAK", "plan": 228.8, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 14.0, 18.0, 8.0, 192.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 7.4, 27.9, 39.9, 33.7, 39.3, 54.0, 13.3, 10.1, 3.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 14.0, "total25": 232.0, "pico": {"semana": 44, "kg": 54.0}, "grupo": "RESTO", "fincas": ["TDA"]}, "EMERALD": {"nombre": "EMERALD", "plan": 196759.1, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, 2.0, 0.0, 0.0, 10.0, 0.0, 106.0, 30.0, 60.0, 60.0, 558.0, 10551.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 21.0, 24.0, 10.0, 18.0, 0.0, 64.0, 48.0, 69.6, 66.0, 424.8, 1538.0, 6372.0, 19926.0, 31062.0, 39538.0, 38036.0, 27062.0, 15618.0, 5834.0, 114.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5.0, 11.6, 8.5, 6.3, 7.6, 21.6, 37.9, 42.0, 50.5, 240.1, 1524.7, 8011.5, 17782.0, 27722.0, 38110.9, 35327.5, 27768.5, 22125.2, 13742.6, 3399.3, 512.1, 301.7, 0.0, 0.0, 0.0], "acum26": 11379.0, "acum25": 8655.4, "total25": 185845.4, "pico": {"semana": 43, "kg": 38110.9}, "grupo": "RESTO", "fincas": ["FAZ", "RF", "TDA"]}, "EUREKA": {"nombre": "EUREKA", "plan": 34292.8, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 60.0, 46.0, 90.0, 26.0, 282.0, 1204.0, 658.0, 2218.0, 4758.0, 5030.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 6.0, 0.0, 14.0, 56.0, 90.0, 410.0, 725.6, 1240.8, 1299.6, 1824.0, 1805.2, 4168.0, 4190.0, 6255.0, 4525.0, 4466.0, 2396.0, 0.0, 224.0, 108.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.4, 2.2, 5.7, 27.9, 59.3, 202.1, 435.3, 818.6, 1265.8, 2065.3, 2425.4, 4101.4, 5044.3, 5411.8, 4855.7, 3992.8, 2744.8, 625.8, 83.4, 49.7, 72.9, 0.0, 0.0, 0.0, 0.0], "acum26": 14372.0, "acum25": 11639.2, "total25": 33803.2, "pico": {"semana": 42, "kg": 5411.8}, "grupo": "RESTO", "fincas": ["FAZ", "SL", "TDA", "TDB"]}, "FARTHING": {"nombre": "FARTHING", "plan": 139417.5, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 24.0, 12.0, 76.0, 450.0, 792.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 10.5, 0.0, 0.0, 0.0, 24.0, 0.0, 0.0, 0.0, 18.0, 0.0, 0.0, 0.0, 0.0, 689.6, 658.0, 2190.0, 9936.0, 18236.0, 19050.0, 23604.0, 23948.0, 4908.0, 3688.0, 1030.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 1.0, 0.9, 0.0, 0.0, 0.0, 16.2, 0.0, 0.0, 0.0, 12.2, 0.0, 4.8, 107.7, 105.2, 770.1, 3278.6, 10507.1, 16176.3, 19460.4, 27672.9, 26371.9, 17498.4, 11252.5, 4404.9, 1453.7, 322.7, 0.0, 0.0, 0.0], "acum26": 1354.0, "acum25": 3590.1, "total25": 107990.1, "pico": {"semana": 44, "kg": 27672.9}, "grupo": "RESTO", "fincas": ["FAZ", "RF", "SL", "TDA", "TDB", "TDBA"]}, "JEWEL": {"nombre": "JEWEL", "plan": 122362.3, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 888.0, 4332.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 654.0, 1277.6, 10808.0, 19230.0, 22726.0, 25162.0, 14570.0, 14608.0, 5110.0, 944.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 180.5, 1224.1, 6822.7, 17554.3, 22805.3, 21686.4, 20394.6, 14950.1, 10120.0, 5301.5, 948.6, 246.5, 127.8, 0.0, 0.0, 0.0], "acum26": 5220.0, "acum25": 12739.6, "total25": 115119.6, "pico": {"semana": 42, "kg": 22805.3}, "grupo": "RESTO", "fincas": ["FAZ", "RF", "TDA"]}, "KESTREL": {"nombre": "KESTREL", "plan": 33736.9, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 250.0, 138.0, 0.0, 168.0, 0.0, 214.0, 134.0, 0.0, 1048.0, 3474.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 22.0, 0.0, 0.0, 396.0, 120.0, 70.0, 0.0, 104.0, 96.0, 66.0, 645.6, 895.2, 0.0, 1831.2, 3854.0, 4099.0, 654.0, 9439.0, 3964.0, 24.0, 1702.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 10.7, 0.0, 0.0, 219.8, 63.1, 47.8, 129.0, 125.8, 370.6, 318.9, 508.6, 460.0, 966.5, 3127.8, 6544.9, 5333.4, 2620.4, 7001.0, 4066.6, 584.6, 1104.6, 132.6, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 5426.0, "acum25": 8100.0, "total25": 27982.0, "pico": {"semana": 44, "kg": 7001.0}, "grupo": "RESTO", "fincas": ["TDB", "TDBA"]}, "MEADOWLARK": {"nombre": "MEADOWLARK", "plan": 21499.9, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 346.0, 1448.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 62.2, 0.0, 375.6, 362.0, 1294.0, 3406.0, 3418.0, 2664.0, 3162.0, 2646.0, 790.0, 240.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 36.0, 0.0, 217.4, 598.6, 2502.1, 3501.4, 3343.5, 3643.0, 4133.2, 2279.5, 1042.9, 202.2, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 1794.0, "acum25": 2093.8, "total25": 18419.8, "pico": {"semana": 45, "kg": 4133.2}, "grupo": "RESTO", "fincas": ["TDBA"]}, "PAMPA": {"nombre": "PAMPA", "plan": 12196.1, "real26": [136.0, 0.0, 0.0, 202.0, 56.0, 0.0, 98.0, 70.0, 76.0, 358.0, 462.0, 112.0, 242.0, 206.0, 152.0, 276.0, 426.0, 498.0, 336.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 22.0, 19.5, 25.5, 18.0, 49.5, 27.0, 72.0, 44.0, 50.0, 32.0, 52.0, 50.4, 43.2, 64.8, 127.2, 94.0, 190.0, 294.0, 194.0, 142.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 66.4, 159.0, 165.7, 170.4, 231.3, 306.8, 340.2, 460.6, 351.2, 324.2, 302.6, 388.8, 359.8, 392.2, 678.8, 862.7, 1001.3, 1752.1, 1923.9, 1311.7, 646.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 3706.0, "acum25": 981.1, "total25": 1611.1, "pico": {"semana": 42, "kg": 1923.9}, "grupo": "RESTO", "fincas": ["FAZ", "TDA"]}, "PRELUDE": {"nombre": "PRELUDE", "plan": 399.1, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16.0, 16.0, 0.0, 24.0, 43.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 8.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 46.0, 30.0, 104.0, 156.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 74.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.7, 3.3, 0.0, 0.4, 1.4, 2.3, 5.2, 9.9, 32.5, 56.8, 51.6, 100.6, 78.2, 4.1, 5.4, 0.0, 0.0, 0.0, 15.5, 30.1, 0.0, 0.0, 0.0], "acum26": 99.0, "acum25": 84.0, "total25": 418.0, "pico": {"semana": 42, "kg": 100.6}, "grupo": "RESTO", "fincas": ["TDA"]}, "PRESTO": {"nombre": "PRESTO", "plan": 325.2, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 44.0, 32.0, 124.0, 0.0, 156.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 2.6, 6.1, 8.6, 6.4, 21.7, 42.4, 29.9, 46.1, 29.0, 52.5, 41.8, 37.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 30.0, "acum25": 44.0, "total25": 356.0, "pico": {"semana": 45, "kg": 52.5}, "grupo": "RESTO", "fincas": ["TDA"]}, "PRIMADONNA": {"nombre": "PRIMADONNA", "plan": 19770.3, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 12.0, 12.0, 0.0, 46.0, 40.0, 76.0, 1856.0, 1602.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 70.8, 0.0, 164.4, 292.0, 1746.0, 4074.0, 5008.0, 4412.0, 1528.0, 1738.0, 228.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.3, 1.7, 0.0, 25.4, 37.6, 199.9, 1074.6, 2419.0, 3294.1, 3891.2, 3428.5, 2421.0, 1615.2, 1020.9, 312.7, 27.1, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 3644.0, "acum25": 2273.2, "total25": 19261.2, "pico": {"semana": 42, "kg": 3891.2}, "grupo": "RESTO", "fincas": ["FAZ", "TDA", "TDB"]}, "REBEL": {"nombre": "REBEL", "plan": 4106.3, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 50.0, 202.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 26.0, 260.0, 602.0, 844.0, 1088.0, 560.0, 152.0, 106.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 104.6, 347.9, 492.7, 758.3, 949.7, 738.1, 475.6, 186.4, 42.5, 10.5, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 252.0, "acum25": 286.0, "total25": 3638.0, "pico": {"semana": 43, "kg": 949.7}, "grupo": "RESTO", "fincas": ["TDA"]}, "ROCIO": {"nombre": "ROCIO", "plan": 243812.7, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 135.0, 544.0, 400.0, 502.0, 1550.0, 3302.0, 7416.0, 33896.0, 25368.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 194.0, 10.0, 156.0, 50.0, 342.0, 952.0, 2972.8, 2020.8, 5478.0, 19975.2, 23038.4, 37148.0, 51706.0, 41134.0, 23164.0, 7592.0, 4136.0, 362.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 107.8, 2.6, 123.3, 26.4, 539.1, 1086.6, 2765.0, 2981.0, 7823.7, 28762.8, 40525.1, 47506.3, 43832.3, 35817.0, 16147.7, 10255.9, 4584.2, 552.6, 373.5, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 73113.0, "acum25": 92337.2, "total25": 220431.2, "pico": {"semana": 41, "kg": 47506.3}, "grupo": "RESTO", "fincas": ["TDA", "TDB", "TDBA"]}, "SAN JOAQUIN": {"nombre": "SAN JOAQUIN", "plan": 51708.4, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 20.0, 30.0, 0.0, 22.0, 16.0, 62.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 46.0, 26.4, 142.0, 238.0, 2146.0, 8338.0, 10432.0, 12812.0, 6180.0, 4138.0, 238.0, 92.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 19.4, 76.3, 219.8, 1766.8, 4578.4, 6601.6, 11075.4, 10148.1, 8691.9, 5816.6, 2077.2, 549.6, 87.2, 0.0, 0.0, 0.0], "acum26": 150.0, "acum25": 214.4, "total25": 44828.4, "pico": {"semana": 44, "kg": 11075.4}, "grupo": "RESTO", "fincas": ["RF", "TDA", "TDB"]}, "SAPPHIRE": {"nombre": "SAPPHIRE", "plan": 750.8, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 128.0, 330.0, 0.0, 268.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.1, 3.1, 62.2, 208.6, 202.6, 122.5, 109.3, 17.6, 23.7, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 0.0, "total25": 726.0, "pico": {"semana": 43, "kg": 208.6}, "grupo": "RESTO", "fincas": ["FAZ"]}, "SCINTILLA": {"nombre": "SCINTILLA", "plan": 4408.8, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 12.0, 38.0, 14.0, 32.0, 36.0, 40.0, 36.0, 44.0, 124.0, 90.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 38.4, 0.0, 104.4, 182.0, 132.0, 610.0, 460.0, 272.0, 268.0, 96.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.1, 1.5, 0.0, 2.6, 15.2, 19.7, 69.8, 281.5, 507.6, 931.9, 875.6, 796.6, 453.0, 385.4, 54.2, 13.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 466.0, "acum25": 324.8, "total25": 2162.8, "pico": {"semana": 42, "kg": 931.9}, "grupo": "RESTO", "fincas": ["FAZ", "TDA", "TDB"]}, "SNOWCHASER": {"nombre": "SNOWCHASER", "plan": 394722.0, "real26": [40.0, 0.0, 365.4, 1560.0, 1400.0, 36.0, 918.0, 1654.0, 2058.0, 4182.0, 9638.0, 7218.0, 6154.0, 9162.0, 12170.0, 13462.0, 22336.0, 51220.0, 39166.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 126.0, 136.5, 267.0, 292.5, 893.0, 2964.0, 2170.0, 2820.0, 3982.0, 5472.0, 9154.0, 14469.8, 13958.4, 10599.6, 23431.2, 32234.4, 56422.0, 48337.0, 35159.0, 37722.0, 8762.0, 1484.0, 878.0, 264.0, 2448.0, 4370.0, 2036.0, 4236.0, 460.0, 1862.0], "modelo": [0.0, 0.0, 8.9, 39.5, 98.6, 138.0, 162.0, 680.7, 1376.1, 1662.9, 1992.9, 3245.1, 4998.2, 8417.2, 11898.3, 16191.5, 27045.1, 43054.1, 61730.3, 63182.1, 48736.6, 37735.0, 27596.9, 11545.3, 5792.2, 732.8, 596.0, 1349.0, 2286.9, 3202.8, 2780.8, 6446.2], "acum26": 182739.4, "acum25": 179392.4, "total25": 327410.4, "pico": {"semana": 41, "kg": 63182.1}, "grupo": "SNOWCHASER", "fincas": ["FAZ", "SL", "TDA", "TDB"]}, "SPRINGHIGH": {"nombre": "SPRINGHIGH", "plan": 59743.9, "real26": [0.0, 0.0, 0.0, 34.0, 38.0, 2.0, 62.0, 32.0, 4.0, 0.0, 120.0, 102.0, 74.0, 330.0, 496.0, 388.0, 306.0, 3392.0, 5631.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 1.5, 0.0, 80.0, 44.0, 56.0, 70.0, 18.0, 118.0, 142.8, 297.6, 307.2, 1449.6, 2106.8, 5432.0, 8305.0, 18044.0, 17882.0, 4050.0, 1182.0, 620.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.4, 19.9, 32.5, 30.3, 40.2, 43.7, 50.4, 115.6, 212.0, 293.2, 880.4, 2889.8, 7308.5, 8005.0, 13430.2, 12384.5, 9693.1, 2960.1, 1092.4, 166.9, 94.7, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 11011.0, "acum25": 10123.5, "total25": 60206.5, "pico": {"semana": 42, "kg": 13430.2}, "grupo": "RESTO", "fincas": ["FAZ", "SL", "TDA", "TDB"]}, "STAR": {"nombre": "STAR", "plan": 27693.4, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2032.0, 8826.0, 10086.0, 5370.0, 2036.0, 308.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 23.6, 631.1, 2337.2, 5012.5, 6940.6, 5720.1, 3881.6, 1947.9, 827.7, 267.7, 71.7, 31.7, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 0.0, "total25": 28658.0, "pico": {"semana": 43, "kg": 6940.6}, "grupo": "RESTO", "fincas": ["FAZ", "TDA"]}, "STELLAR": {"nombre": "STELLAR", "plan": 333.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 34.0, 36.0, 0.0, 0.0, 0.0, 216.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.9, 24.5, 41.5, 42.5, 37.7, 34.8, 75.9, 44.0, 27.2, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 0.0, "total25": 286.0, "pico": {"semana": 47, "kg": 75.9}, "grupo": "RESTO", "fincas": ["TDA"]}, "SWEET CRISP": {"nombre": "SWEET CRISP", "plan": 20561.4, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 26.0, 46.0, 10.0, 88.0, 48.0, 182.0, 251.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 55.2, 32.4, 262.8, 304.0, 724.0, 714.0, 326.0, 3880.0, 3636.0, 5620.0, 1420.0, 2752.0, 846.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.8, 2.4, 2.1, 18.9, 29.0, 86.2, 217.5, 490.4, 1167.8, 1522.2, 2328.9, 3560.1, 3895.9, 3067.5, 2504.2, 1132.6, 515.5, 18.4, 0.0, 0.0, 0.0], "acum26": 651.0, "acum25": 1378.4, "total25": 20572.4, "pico": {"semana": 45, "kg": 3895.9}, "grupo": "RESTO", "fincas": ["FAZ", "TDA", "TDB"]}, "VENTURA": {"nombre": "VENTURA", "plan": 8805.9, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 12.0, 0.0, 26.0, 86.0, 30.0, 232.0, 736.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 307.2, 912.0, 562.0, 1380.0, 64.0, 2326.0, 646.0, 518.0, 58.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 25.9, 0.0, 83.4, 76.2, 157.6, 361.8, 940.2, 1289.0, 1398.8, 672.0, 1850.0, 799.6, 972.0, 179.4, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 1122.0, "acum25": 1781.2, "total25": 6773.2, "pico": {"semana": 44, "kg": 1850.0}, "grupo": "RESTO", "fincas": ["TDB", "TDBA"]}}, "por_fv": {"FAZ|BLUECRISP": {"nombre": "FAZ · BLUECRISP", "plan": 4843.7, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 20.0, 0.0, 1108.0, 1118.0, 1148.0, 1106.0, 358.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 90.3, 249.1, 608.2, 959.2, 905.9, 1014.4, 782.0, 215.8, 18.9, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 0.0, "total25": 4858.0, "pico": {"semana": 46, "kg": 1014.4}}, "FAZ|CHICKADEE": {"nombre": "FAZ · CHICKADEE", "plan": 0.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 124.0, 32.0, 68.0, 0.0, 120.0, 110.0, 48.0, 350.0, 186.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 21.0, 8.0, 10.0, 22.0, 0.0, 68.0, 60.0, 186.0, 0.0, 316.8, 224.0, 276.0, 236.0, 352.0, 0.0, 0.0, 196.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 1038.0, "acum25": 1191.8, "total25": 1975.8, "pico": {"semana": 0, "kg": 0.0}}, "FAZ|EMERALD": {"nombre": "FAZ · EMERALD", "plan": 73871.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, 2.0, 0.0, 0.0, 10.0, 0.0, 92.0, 0.0, 60.0, 28.0, 80.0, 2082.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 21.0, 24.0, 10.0, 18.0, 0.0, 64.0, 48.0, 69.6, 66.0, 152.4, 500.0, 1346.0, 4240.0, 8904.0, 12114.0, 18326.0, 13408.0, 8960.0, 4328.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5.0, 11.6, 8.5, 6.3, 7.6, 17.6, 31.9, 39.9, 50.5, 101.9, 258.6, 1374.3, 3458.0, 8002.0, 12401.4, 12892.1, 13211.8, 11440.0, 7872.5, 2251.1, 228.5, 199.8, 0.0, 0.0, 0.0], "acum26": 2356.0, "acum25": 2319.0, "total25": 72599.0, "pico": {"semana": 45, "kg": 13211.8}}, "FAZ|EUREKA": {"nombre": "FAZ · EUREKA", "plan": 4655.7, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0, 14.0, 2.0, 6.0, 16.0, 40.0, 76.0, 128.0, 408.0, 400.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 27.6, 48.0, 39.6, 74.0, 158.0, 266.0, 254.0, 212.0, 142.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 44.9, 138.4, 169.3, 206.9, 418.8, 778.1, 994.6, 900.0, 694.3, 310.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 1100.0, "acum25": 347.2, "total25": 1221.2, "pico": {"semana": 42, "kg": 994.6}}, "FAZ|FARTHING": {"nombre": "FAZ · FARTHING", "plan": 22988.4, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 14.0, 12.0, 36.0, 248.0, 403.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 127.2, 124.0, 712.0, 2120.0, 2450.0, 3180.0, 2598.0, 3378.0, 0.0, 436.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.8, 6.4, 52.0, 150.7, 686.8, 2118.2, 2984.3, 3467.9, 4537.0, 4125.8, 2652.8, 1312.0, 550.9, 240.2, 98.8, 0.0, 0.0, 0.0], "acum26": 713.0, "acum25": 963.2, "total25": 15125.2, "pico": {"semana": 44, "kg": 4537.0}}, "FAZ|JEWEL": {"nombre": "FAZ · JEWEL", "plan": 11190.7, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 332.0, 1134.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 308.4, 581.6, 1430.0, 2170.0, 1478.0, 1802.0, 1700.0, 360.0, 1170.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 56.7, 273.8, 890.1, 1614.5, 1795.3, 1842.5, 1815.1, 1190.6, 804.9, 709.1, 106.8, 39.0, 52.3, 0.0, 0.0, 0.0], "acum26": 1466.0, "acum25": 2320.0, "total25": 11000.0, "pico": {"semana": 43, "kg": 1842.5}}, "FAZ|PAMPA": {"nombre": "FAZ · PAMPA", "plan": 8258.2, "real26": [136.0, 0.0, 0.0, 202.0, 56.0, 0.0, 98.0, 70.0, 76.0, 240.0, 330.0, 112.0, 120.0, 128.0, 34.0, 98.0, 186.0, 358.0, 180.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 22.0, 19.5, 25.5, 18.0, 49.5, 27.0, 72.0, 44.0, 50.0, 32.0, 52.0, 50.4, 43.2, 64.8, 127.2, 94.0, 190.0, 294.0, 194.0, 142.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 48.1, 107.3, 113.1, 114.3, 161.2, 204.5, 236.8, 307.8, 238.7, 216.9, 207.8, 263.0, 242.6, 268.7, 468.6, 579.4, 691.8, 1201.4, 1288.3, 880.7, 417.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 2424.0, "acum25": 981.1, "total25": 1611.1, "pico": {"semana": 42, "kg": 1288.3}}, "FAZ|PRIMADONNA": {"nombre": "FAZ · PRIMADONNA", "plan": 5444.8, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 12.0, 12.0, 0.0, 46.0, 40.0, 76.0, 706.0, 636.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 70.8, 0.0, 136.8, 236.0, 640.0, 956.0, 1648.0, 878.0, 0.0, 722.0, 144.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.3, 1.7, 0.0, 25.4, 37.6, 91.3, 341.3, 690.2, 917.9, 997.1, 919.0, 573.7, 378.1, 298.4, 157.6, 14.3, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 1528.0, "acum25": 1083.6, "total25": 5431.6, "pico": {"semana": 42, "kg": 997.1}}, "FAZ|SAPPHIRE": {"nombre": "FAZ · SAPPHIRE", "plan": 750.8, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 128.0, 330.0, 0.0, 268.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.1, 3.1, 62.2, 208.6, 202.6, 122.5, 109.3, 17.6, 23.7, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 0.0, "total25": 726.0, "pico": {"semana": 43, "kg": 208.6}}, "FAZ|SCINTILLA": {"nombre": "FAZ · SCINTILLA", "plan": 1053.3, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 12.0, 38.0, 14.0, 32.0, 36.0, 40.0, 36.0, 44.0, 124.0, 90.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 38.4, 0.0, 104.4, 136.0, 80.0, 306.0, 138.0, 0.0, 196.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.1, 1.5, 0.0, 2.6, 14.0, 19.5, 41.2, 92.5, 133.7, 192.8, 226.4, 150.8, 83.9, 70.5, 9.7, 13.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 466.0, "acum25": 278.8, "total25": 998.8, "pico": {"semana": 43, "kg": 226.4}}, "FAZ|SNOWCHASER": {"nombre": "FAZ · SNOWCHASER", "plan": 43721.3, "real26": [40.0, 0.0, 0.0, 628.0, 360.0, 0.0, 318.0, 492.0, 598.0, 1338.0, 2140.0, 1894.0, 1074.0, 1980.0, 1894.0, 1974.0, 3282.0, 5614.0, 3527.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 42.0, 87.0, 123.0, 70.5, 144.0, 798.0, 800.0, 380.0, 900.0, 700.0, 1986.0, 2879.6, 2212.8, 1366.8, 2427.6, 2580.8, 3914.0, 3406.0, 1962.0, 4464.0, 434.0, 0.0, 160.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 8.9, 39.5, 69.7, 79.4, 88.1, 294.7, 609.8, 501.9, 521.9, 948.1, 1139.1, 2216.3, 2956.9, 2552.1, 3603.7, 5534.0, 5988.8, 5221.3, 3341.8, 3286.7, 3231.3, 559.0, 135.5, 84.8, 48.4, 258.4, 401.0, 0.0, 0.0, 0.0], "acum26": 27153.0, "acum25": 21412.1, "total25": 31838.1, "pico": {"semana": 40, "kg": 5988.8}}, "FAZ|SPRINGHIGH": {"nombre": "FAZ · SPRINGHIGH", "plan": 26509.5, "real26": [0.0, 0.0, 0.0, 34.0, 38.0, 0.0, 62.0, 32.0, 4.0, 0.0, 120.0, 102.0, 42.0, 330.0, 278.0, 294.0, 160.0, 1882.0, 3013.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 1.5, 0.0, 48.0, 44.0, 30.0, 50.0, 0.0, 118.0, 46.8, 133.2, 171.6, 1197.6, 1152.8, 2736.0, 2870.0, 8078.0, 7958.0, 726.0, 820.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.4, 10.5, 24.0, 22.6, 27.4, 27.2, 40.1, 69.9, 84.4, 98.6, 441.5, 1709.5, 3495.5, 4315.6, 4464.3, 5483.2, 4450.1, 1374.6, 257.3, 53.3, 59.1, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 6391.0, "acum25": 5729.5, "total25": 26181.5, "pico": {"semana": 43, "kg": 5483.2}}, "FAZ|STAR": {"nombre": "FAZ · STAR", "plan": 18737.4, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1034.0, 6046.0, 6560.0, 3410.0, 1196.0, 182.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 23.6, 490.6, 1818.8, 3703.5, 4585.5, 3712.8, 2462.6, 1227.2, 505.0, 163.2, 44.7, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 0.0, "total25": 18428.0, "pico": {"semana": 43, "kg": 4585.5}}, "FAZ|SWEET CRISP": {"nombre": "FAZ · SWEET CRISP", "plan": 12691.4, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 26.0, 46.0, 0.0, 88.0, 48.0, 182.0, 251.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 55.2, 32.4, 262.8, 254.0, 678.0, 684.0, 0.0, 2000.0, 2202.0, 2412.0, 1124.0, 1894.0, 810.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.8, 2.4, 2.1, 18.9, 29.0, 85.7, 194.9, 375.7, 743.6, 832.9, 1174.4, 2050.4, 2098.1, 1958.1, 1749.3, 976.5, 397.5, 0.0, 0.0, 0.0, 0.0], "acum26": 641.0, "acum25": 1282.4, "total25": 12408.4, "pico": {"semana": 45, "kg": 2098.1}}, "RF|EMERALD": {"nombre": "RF · EMERALD", "plan": 97432.8, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 14.0, 30.0, 0.0, 32.0, 478.0, 8469.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 272.4, 1038.0, 4934.0, 14514.0, 18844.0, 20596.0, 14622.0, 9386.0, 4236.0, 1370.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.1, 6.0, 2.1, 0.0, 136.2, 1256.1, 6240.8, 13159.4, 16911.4, 19993.0, 17209.7, 10225.2, 7576.7, 3774.0, 772.9, 145.9, 19.4, 0.0, 0.0, 0.0], "acum26": 9023.0, "acum25": 6244.4, "total25": 89812.4, "pico": {"semana": 43, "kg": 19993.0}}, "RF|FARTHING": {"nombre": "RF · FARTHING", "plan": 5434.2, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0, 0.0, 40.0, 38.0, 327.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 68.0, 0.0, 246.0, 408.0, 850.0, 500.0, 1222.0, 806.0, 382.0, 306.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 29.9, 39.1, 238.4, 522.0, 664.1, 551.4, 1014.9, 824.2, 786.2, 594.4, 161.1, 8.6, 0.0, 0.0, 0.0, 0.0], "acum26": 415.0, "acum25": 314.0, "total25": 4788.0, "pico": {"semana": 44, "kg": 1014.9}}, "RF|JEWEL": {"nombre": "RF · JEWEL", "plan": 40027.9, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 556.0, 3108.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 345.6, 650.0, 5452.0, 9494.0, 9598.0, 3868.0, 4624.0, 1934.0, 526.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 120.7, 926.4, 3928.1, 8233.3, 9138.1, 6570.9, 5255.3, 3226.2, 1762.8, 718.0, 119.8, 26.2, 2.1, 0.0, 0.0, 0.0], "acum26": 3664.0, "acum25": 6447.6, "total25": 36491.6, "pico": {"semana": 42, "kg": 9138.1}}, "RF|SAN JOAQUIN": {"nombre": "RF · SAN JOAQUIN", "plan": 6037.9, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 20.0, 30.0, 0.0, 22.0, 16.0, 16.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 46.0, 0.0, 130.0, 172.0, 528.0, 966.0, 878.0, 974.0, 966.0, 868.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 19.3, 71.4, 187.3, 328.5, 580.8, 957.9, 1086.6, 735.8, 897.5, 829.4, 295.0, 40.9, 7.2, 0.0, 0.0, 0.0], "acum26": 104.0, "acum25": 176.0, "total25": 5528.0, "pico": {"semana": 44, "kg": 1086.6}}, "RF|STAR": {"nombre": "RF · STAR", "plan": 0.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 86.0, 68.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 0.0, "total25": 154.0, "pico": {"semana": 0, "kg": 0.0}}, "SL|EMERALD": {"nombre": "SL · EMERALD", "plan": 0.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 258.0, 126.0, 164.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 0.0, "total25": 548.0, "pico": {"semana": 0, "kg": 0.0}}, "SL|EUREKA": {"nombre": "SL · EUREKA", "plan": 17300.3, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 50.0, 0.0, 88.0, 0.0, 254.0, 940.0, 346.0, 1474.0, 3090.0, 1970.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 6.0, 0.0, 14.0, 56.0, 86.0, 360.0, 554.4, 1008.0, 866.4, 1224.0, 1130.0, 3030.0, 1792.0, 2593.0, 1879.0, 1780.0, 570.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.4, 2.2, 5.7, 27.9, 57.9, 185.3, 374.0, 654.3, 883.0, 1328.4, 1501.9, 2365.3, 2626.7, 2284.7, 2003.0, 1659.8, 1091.1, 237.7, 9.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 8212.0, "acum25": 8334.8, "total25": 16948.8, "pico": {"semana": 41, "kg": 2626.7}}, "SL|FARTHING": {"nombre": "SL · FARTHING", "plan": 1699.9, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 10.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1190.0, 1240.0, 670.0, 730.0, 708.0, 236.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 1.0, 0.9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 7.1, 36.1, 182.9, 295.5, 312.0, 273.8, 240.5, 228.1, 110.1, 12.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 10.5, "total25": 4784.5, "pico": {"semana": 43, "kg": 312.0}}, "SL|SNOWCHASER": {"nombre": "SL · SNOWCHASER", "plan": 91100.1, "real26": [0.0, 0.0, 365.4, 920.0, 956.0, 0.0, 600.0, 1010.0, 830.0, 1790.0, 3188.0, 2492.0, 2418.0, 2860.0, 3670.0, 2534.0, 4818.0, 7542.0, 5471.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 84.0, 49.5, 144.0, 222.0, 749.0, 1344.0, 598.0, 2004.0, 1744.0, 2782.0, 4412.0, 5719.8, 6132.0, 3588.0, 5044.8, 5271.2, 7120.0, 2015.0, 2045.0, 5728.0, 324.0, 0.0, 0.0, 0.0, 2424.0, 3736.0, 1900.0, 4236.0, 460.0, 1862.0], "modelo": [0.0, 0.0, 0.0, 0.0, 28.8, 58.7, 74.0, 147.6, 375.7, 868.9, 946.9, 1169.8, 2057.9, 2829.8, 4247.4, 5773.3, 7409.3, 7381.4, 8094.9, 8884.2, 7949.9, 7096.4, 3608.7, 4186.0, 3263.2, 336.2, 340.5, 349.9, 1217.9, 3175.8, 2780.8, 6446.2], "acum26": 41464.4, "acum25": 47008.3, "total25": 71738.3, "pico": {"semana": 41, "kg": 8884.2}}, "SL|SPRINGHIGH": {"nombre": "SL · SPRINGHIGH", "plan": 4500.1, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 32.0, 0.0, 96.0, 74.0, 146.0, 256.0, 418.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 32.0, 0.0, 26.0, 20.0, 18.0, 0.0, 96.0, 164.4, 135.6, 0.0, 476.0, 540.0, 1275.0, 0.0, 1260.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 9.4, 8.5, 7.6, 12.8, 16.5, 10.1, 43.5, 123.5, 187.1, 340.6, 465.1, 576.0, 915.0, 728.9, 541.8, 333.3, 95.0, 85.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 1022.0, "acum25": 1508.0, "total25": 4043.0, "pico": {"semana": 41, "kg": 915.0}}, "TDA|ABUNDANCE": {"nombre": "TDA · ABUNDANCE", "plan": 3878.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 162.0, 320.0, 1190.0, 382.0, 580.0, 188.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.1, 181.0, 566.5, 803.6, 905.8, 598.8, 580.4, 221.8, 18.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 0.0, "total25": 2822.0, "pico": {"semana": 44, "kg": 905.8}}, "TDA|CHICKADEE": {"nombre": "TDA · CHICKADEE", "plan": 0.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0, 0.0, 48.0, 192.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 10.0, "total25": 250.0, "pico": {"semana": 0, "kg": 0.0}}, "TDA|CORONA": {"nombre": "TDA · CORONA", "plan": 1022.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 18.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 18.0, 432.0, 252.0, 372.0, 420.0, 414.0, 318.0, 0.0, 14.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.1, 16.8, 81.7, 141.1, 139.8, 187.9, 178.2, 171.3, 88.0, 5.4, 10.6, 0.0, 0.0, 0.0], "acum26": 48.0, "acum25": 0.0, "total25": 2240.0, "pico": {"semana": 45, "kg": 187.9}}, "TDA|DAYBREAK": {"nombre": "TDA · DAYBREAK", "plan": 228.8, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 14.0, 18.0, 8.0, 192.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 7.4, 27.9, 39.9, 33.7, 39.3, 54.0, 13.3, 10.1, 3.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 14.0, "total25": 232.0, "pico": {"semana": 44, "kg": 54.0}}, "TDA|EMERALD": {"nombre": "TDA · EMERALD", "plan": 25455.3, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 92.0, 1172.0, 3314.0, 6570.0, 4962.0, 4104.0, 2422.0, 136.0, 114.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, 9.9, 396.3, 1164.5, 2808.7, 5716.5, 5225.7, 4331.5, 3108.5, 2096.1, 375.4, 137.7, 82.5, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 92.0, "total25": 22886.0, "pico": {"semana": 43, "kg": 5716.5}}, "TDA|EUREKA": {"nombre": "TDA · EUREKA", "plan": 5454.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 22.0, 0.0, 0.0, 12.0, 112.0, 158.0, 272.0, 382.0, 816.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 55.2, 67.2, 182.4, 172.8, 275.2, 224.0, 616.0, 1116.0, 418.0, 762.0, 444.0, 0.0, 0.0, 108.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 20.1, 63.3, 118.7, 218.8, 299.3, 419.5, 540.2, 948.7, 1028.4, 683.0, 699.4, 304.5, 0.0, 37.5, 72.9, 0.0, 0.0, 0.0, 0.0], "acum26": 1774.0, "acum25": 976.8, "total25": 4440.8, "pico": {"semana": 43, "kg": 1028.4}}, "TDA|FARTHING": {"nombre": "TDA · FARTHING", "plan": 8411.5, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 62.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 56.0, 92.0, 476.0, 460.0, 538.0, 460.0, 366.0, 160.0, 52.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 140.3, 538.1, 999.4, 1418.2, 1585.3, 1587.5, 981.1, 844.2, 256.5, 61.0, 0.0, 0.0, 0.0, 0.0], "acum26": 62.0, "acum25": 56.0, "total25": 2660.0, "pico": {"semana": 45, "kg": 1587.5}}, "TDA|JEWEL": {"nombre": "TDA · JEWEL", "plan": 71143.7, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 90.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 46.0, 3926.0, 7566.0, 11650.0, 19492.0, 8246.0, 12314.0, 3414.0, 944.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3.1, 23.9, 2004.5, 7706.4, 11871.9, 13273.0, 13324.2, 10533.3, 7552.4, 3874.4, 722.0, 181.3, 73.3, 0.0, 0.0, 0.0], "acum26": 90.0, "acum25": 3972.0, "total25": 67628.0, "pico": {"semana": 44, "kg": 13324.2}}, "TDA|PAMPA": {"nombre": "TDA · PAMPA", "plan": 3938.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 118.0, 132.0, 0.0, 122.0, 78.0, 118.0, 178.0, 240.0, 140.0, 156.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 18.3, 51.7, 52.6, 56.1, 70.1, 102.3, 103.3, 152.7, 112.5, 107.3, 94.8, 125.8, 117.2, 123.5, 210.2, 283.4, 309.5, 550.7, 635.6, 431.0, 229.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 1282.0, "acum25": 0.0, "total25": 0.0, "pico": {"semana": 42, "kg": 635.6}}, "TDA|PRELUDE": {"nombre": "TDA · PRELUDE", "plan": 399.1, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16.0, 16.0, 0.0, 24.0, 43.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 8.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 46.0, 30.0, 104.0, 156.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 74.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.7, 3.3, 0.0, 0.4, 1.4, 2.3, 5.2, 9.9, 32.5, 56.8, 51.6, 100.6, 78.2, 4.1, 5.4, 0.0, 0.0, 0.0, 15.5, 30.1, 0.0, 0.0, 0.0], "acum26": 99.0, "acum25": 84.0, "total25": 418.0, "pico": {"semana": 42, "kg": 100.6}}, "TDA|PRESTO": {"nombre": "TDA · PRESTO", "plan": 325.2, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 30.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 44.0, 32.0, 124.0, 0.0, 156.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 2.6, 6.1, 8.6, 6.4, 21.7, 42.4, 29.9, 46.1, 29.0, 52.5, 41.8, 37.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 30.0, "acum25": 44.0, "total25": 356.0, "pico": {"semana": 45, "kg": 52.5}}, "TDA|PRIMADONNA": {"nombre": "TDA · PRIMADONNA", "plan": 4084.4, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 262.0, 96.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 27.6, 56.0, 694.0, 876.0, 730.0, 1668.0, 996.0, 616.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 7.1, 116.9, 399.6, 599.7, 630.9, 678.3, 687.8, 530.9, 352.1, 74.1, 7.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 358.0, "acum25": 777.6, "total25": 5663.6, "pico": {"semana": 44, "kg": 687.8}}, "TDA|REBEL": {"nombre": "TDA · REBEL", "plan": 4106.3, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 50.0, 202.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 26.0, 260.0, 602.0, 844.0, 1088.0, 560.0, 152.0, 106.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 104.6, 347.9, 492.7, 758.3, 949.7, 738.1, 475.6, 186.4, 42.5, 10.5, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 252.0, "acum25": 286.0, "total25": 3638.0, "pico": {"semana": 43, "kg": 949.7}}, "TDA|ROCIO": {"nombre": "TDA · ROCIO", "plan": 23829.6, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 62.0, 102.0, 48.0, 60.0, 110.0, 484.0, 1100.0, 2518.0, 3818.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0, 0.0, 16.0, 0.0, 24.0, 0.0, 139.2, 64.8, 1412.4, 1546.0, 2860.0, 8020.0, 6028.0, 1722.0, 1482.0, 170.0, 242.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.3, 2.6, 2.1, 4.1, 3.2, 7.5, 36.5, 74.5, 446.5, 1487.1, 2867.0, 5130.3, 5457.1, 3789.6, 2190.3, 1447.2, 535.6, 194.8, 152.1, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 8302.0, "acum25": 6072.4, "total25": 23736.4, "pico": {"semana": 42, "kg": 5457.1}}, "TDA|SAN JOAQUIN": {"nombre": "TDA · SAN JOAQUIN", "plan": 8997.5, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 46.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 26.4, 12.0, 66.0, 636.0, 1082.0, 2096.0, 2836.0, 1264.0, 800.0, 238.0, 92.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 4.9, 27.2, 164.5, 542.9, 950.6, 1380.0, 1802.8, 1695.0, 1414.4, 669.1, 284.9, 61.1, 0.0, 0.0, 0.0], "acum26": 46.0, "acum25": 38.4, "total25": 9148.4, "pico": {"semana": 45, "kg": 1802.8}}, "TDA|SCINTILLA": {"nombre": "TDA · SCINTILLA", "plan": 104.4, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 52.0, 20.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5.4, 16.1, 21.6, 29.4, 21.3, 10.0, 0.6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 0.0, "total25": 72.0, "pico": {"semana": 43, "kg": 29.4}}, "TDA|SNOWCHASER": {"nombre": "TDA · SNOWCHASER", "plan": 142894.7, "real26": [0.0, 0.0, 0.0, 0.0, 84.0, 0.0, 0.0, 102.0, 438.0, 690.0, 2856.0, 1222.0, 1828.0, 2434.0, 3888.0, 5690.0, 8060.0, 22152.0, 17526.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 742.5, 642.0, 338.0, 982.0, 1552.0, 1768.0, 3574.8, 3105.6, 2847.6, 8370.0, 14007.2, 25436.0, 24930.0, 18920.0, 13734.0, 3388.0, 1484.0, 546.0, 228.0, 24.0, 634.0, 136.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 228.8, 345.3, 231.6, 426.1, 803.3, 1123.2, 2044.1, 2551.5, 4565.9, 9416.2, 18465.9, 26767.9, 26215.5, 20618.4, 15515.7, 8049.5, 2964.8, 1023.9, 242.9, 193.6, 660.1, 413.3, 27.0, 0.0, 0.0], "acum26": 66970.0, "acum25": 63365.7, "total25": 127389.7, "pico": {"semana": 40, "kg": 26767.9}}, "TDA|SPRINGHIGH": {"nombre": "TDA · SPRINGHIGH", "plan": 8572.2, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 450.0, 196.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 98.4, 76.0, 1012.0, 2456.0, 2496.0, 3312.0, 1074.0, 362.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 2.2, 4.1, 7.6, 36.5, 177.6, 643.1, 1442.3, 1708.1, 1651.5, 1915.6, 534.2, 407.8, 15.2, 26.2, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 646.0, "acum25": 1186.4, "total25": 10886.4, "pico": {"semana": 44, "kg": 1915.6}}, "TDA|STAR": {"nombre": "TDA · STAR", "plan": 8956.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 998.0, 2694.0, 3458.0, 1960.0, 840.0, 126.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 140.6, 518.3, 1309.1, 2355.1, 2007.3, 1419.0, 720.7, 322.7, 104.5, 27.1, 31.7, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 0.0, "total25": 10076.0, "pico": {"semana": 43, "kg": 2355.1}}, "TDA|STELLAR": {"nombre": "TDA · STELLAR", "plan": 333.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 34.0, 36.0, 0.0, 0.0, 0.0, 216.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.9, 24.5, 41.5, 42.5, 37.7, 34.8, 75.9, 44.0, 27.2, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 0.0, "total25": 286.0, "pico": {"semana": 47, "kg": 75.9}}, "TDA|SWEET CRISP": {"nombre": "TDA · SWEET CRISP", "plan": 1580.1, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16.0, 30.0, 46.0, 312.0, 354.0, 512.0, 118.0, 62.0, 36.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 2.0, 19.5, 55.4, 97.3, 197.3, 261.3, 301.2, 350.1, 207.5, 54.1, 29.5, 4.5, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 16.0, "total25": 1486.0, "pico": {"semana": 46, "kg": 350.1}}, "TDB|EUREKA": {"nombre": "TDB · EUREKA", "plan": 6882.8, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0, 0.0, 20.0, 0.0, 112.0, 78.0, 344.0, 878.0, 1844.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.0, 50.0, 116.0, 138.0, 202.8, 387.6, 326.0, 756.0, 1516.0, 2292.0, 2016.0, 1782.0, 1382.0, 0.0, 224.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.3, 16.8, 41.3, 56.2, 125.6, 348.8, 417.3, 897.9, 1099.4, 1183.9, 924.3, 955.7, 644.0, 83.6, 74.4, 12.3, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 3286.0, "acum25": 1980.4, "total25": 11192.4, "pico": {"semana": 42, "kg": 1183.9}}, "TDB|FARTHING": {"nombre": "TDB · FARTHING", "plan": 46384.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 222.0, 3444.0, 9110.0, 8618.0, 10568.0, 9820.0, 2314.0, 1716.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.8, 23.3, 36.2, 1672.8, 3794.0, 6515.9, 8221.4, 10597.1, 7547.4, 4944.2, 2243.0, 656.0, 122.3, 9.5, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 222.0, "total25": 45812.0, "pico": {"semana": 44, "kg": 10597.1}}, "TDB|KESTREL": {"nombre": "TDB · KESTREL", "plan": 2137.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 122.0, 138.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 252.0, 376.0, 402.0, 274.0, 0.0, 24.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 208.6, 387.9, 488.5, 470.6, 368.8, 73.2, 114.6, 23.8, 0.9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 260.0, "acum25": 252.0, "total25": 1328.0, "pico": {"semana": 41, "kg": 488.5}}, "TDB|PRIMADONNA": {"nombre": "TDB · PRIMADONNA", "plan": 10241.1, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 888.0, 870.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 412.0, 2242.0, 2630.0, 1866.0, 532.0, 400.0, 84.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 101.5, 616.4, 1329.2, 1776.5, 2263.2, 1831.2, 1159.5, 706.2, 370.5, 81.0, 5.8, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 1758.0, "acum25": 412.0, "total25": 8166.0, "pico": {"semana": 42, "kg": 2263.2}}, "TDB|ROCIO": {"nombre": "TDB · ROCIO", "plan": 71483.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 73.0, 158.0, 56.0, 188.0, 594.0, 1118.0, 2122.0, 9962.0, 10244.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 72.0, 204.0, 274.8, 2216.4, 6550.0, 12104.0, 19168.0, 16354.0, 9102.0, 3432.0, 1838.0, 120.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 3.6, 0.6, 126.3, 265.9, 519.2, 2048.9, 6623.7, 13281.5, 16469.8, 14476.8, 9118.0, 4676.6, 2931.2, 645.5, 259.7, 35.8, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 24515.0, "acum25": 21421.2, "total25": 71435.2, "pico": {"semana": 41, "kg": 16469.8}}, "TDB|SAN JOAQUIN": {"nombre": "TDB · SAN JOAQUIN", "plan": 36673.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 982.0, 6290.0, 7458.0, 9002.0, 3950.0, 2470.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5.2, 1273.8, 3454.7, 4693.1, 8608.8, 7609.5, 6099.5, 3572.7, 1113.1, 223.8, 18.9, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 0.0, "total25": 30152.0, "pico": {"semana": 44, "kg": 8608.8}}, "TDB|SCINTILLA": {"nombre": "TDB · SCINTILLA", "plan": 3251.1, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 46.0, 0.0, 284.0, 322.0, 272.0, 72.0, 96.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.2, 0.2, 28.6, 183.5, 357.7, 717.6, 619.8, 624.4, 359.1, 314.3, 44.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 0.0, "acum25": 46.0, "total25": 1092.0, "pico": {"semana": 42, "kg": 717.6}}, "TDB|SNOWCHASER": {"nombre": "TDB · SNOWCHASER", "plan": 117005.9, "real26": [0.0, 0.0, 0.0, 12.0, 0.0, 36.0, 0.0, 50.0, 192.0, 364.0, 1454.0, 1610.0, 834.0, 1888.0, 2718.0, 3264.0, 6176.0, 15912.0, 12642.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 79.5, 130.0, 98.0, 356.0, 438.0, 988.0, 2295.6, 2508.0, 2797.2, 7588.8, 10375.2, 19952.0, 17986.0, 12232.0, 13796.0, 4616.0, 0.0, 172.0, 36.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 9.5, 45.3, 60.5, 98.0, 323.9, 678.0, 1326.9, 2142.5, 3300.2, 6615.9, 11672.8, 20878.6, 22861.1, 16826.5, 11836.1, 12707.5, 3835.5, 1369.6, 68.9, 13.5, 80.6, 254.7, 0.0, 0.0, 0.0], "acum26": 47152.0, "acum25": 47606.3, "total25": 96444.3, "pico": {"semana": 41, "kg": 22861.1}}, "TDB|SPRINGHIGH": {"nombre": "TDB · SPRINGHIGH", "plan": 20162.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 122.0, 20.0, 0.0, 804.0, 2004.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 153.6, 402.0, 1144.0, 1704.0, 7470.0, 5352.0, 2250.0, 0.0, 620.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 61.7, 537.6, 2593.8, 1332.1, 6529.0, 4707.9, 2994.0, 956.2, 341.8, 98.4, 9.5, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 2952.0, "acum25": 1699.6, "total25": 19095.6, "pico": {"semana": 42, "kg": 6529.0}}, "TDB|SWEET CRISP": {"nombre": "TDB · SWEET CRISP", "plan": 6289.9, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 50.0, 30.0, 0.0, 280.0, 1568.0, 1080.0, 2696.0, 178.0, 796.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 20.7, 95.2, 368.8, 592.0, 957.2, 1248.5, 1496.6, 759.3, 547.4, 102.0, 88.4, 13.9, 0.0, 0.0, 0.0], "acum26": 10.0, "acum25": 80.0, "total25": 6678.0, "pico": {"semana": 45, "kg": 1496.6}}, "TDB|VENTURA": {"nombre": "TDB · VENTURA", "plan": 805.9, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 26.0, 8.0, 30.0, 28.0, 72.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 42.0, 102.0, 72.0, 64.0, 66.0, 48.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 9.1, 1.5, 80.1, 174.8, 125.6, 140.4, 163.3, 79.9, 23.0, 7.3, 0.8, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 164.0, "acum25": 144.0, "total25": 394.0, "pico": {"semana": 40, "kg": 174.8}}, "TDBA|FARTHING": {"nombre": "TDBA · FARTHING", "plan": 54499.4, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 164.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 24.0, 0.0, 0.0, 0.0, 18.0, 0.0, 0.0, 0.0, 0.0, 494.4, 534.0, 954.0, 2682.0, 4110.0, 5622.0, 7948.0, 8776.0, 1610.0, 1070.0, 978.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 16.2, 0.0, 0.0, 0.0, 12.2, 0.0, 0.0, 100.5, 0.0, 536.9, 504.2, 3352.0, 4717.3, 5489.6, 9664.8, 12046.6, 7906.1, 6148.8, 2768.4, 1021.5, 214.5, 0.0, 0.0, 0.0], "acum26": 164.0, "acum25": 2024.4, "total25": 34820.4, "pico": {"semana": 45, "kg": 12046.6}}, "TDBA|KESTREL": {"nombre": "TDBA · KESTREL", "plan": 31599.9, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 250.0, 138.0, 0.0, 168.0, 0.0, 214.0, 134.0, 0.0, 926.0, 3336.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 22.0, 0.0, 0.0, 396.0, 120.0, 70.0, 0.0, 104.0, 96.0, 66.0, 645.6, 895.2, 0.0, 1831.2, 3602.0, 3723.0, 252.0, 9165.0, 3964.0, 0.0, 1702.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 10.7, 0.0, 0.0, 219.8, 63.1, 47.8, 129.0, 125.8, 370.6, 318.9, 508.6, 460.0, 757.8, 2739.9, 6056.4, 4862.8, 2251.7, 6927.8, 3952.0, 560.8, 1103.7, 132.6, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 5166.0, "acum25": 7848.0, "total25": 26654.0, "pico": {"semana": 44, "kg": 6927.8}}, "TDBA|MEADOWLARK": {"nombre": "TDBA · MEADOWLARK", "plan": 21499.9, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 346.0, 1448.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 62.2, 0.0, 375.6, 362.0, 1294.0, 3406.0, 3418.0, 2664.0, 3162.0, 2646.0, 790.0, 240.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 36.0, 0.0, 217.4, 598.6, 2502.1, 3501.4, 3343.5, 3643.0, 4133.2, 2279.5, 1042.9, 202.2, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 1794.0, "acum25": 2093.8, "total25": 18419.8, "pico": {"semana": 45, "kg": 4133.2}}, "TDBA|ROCIO": {"nombre": "TDBA · ROCIO", "plan": 148500.1, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 284.0, 296.0, 254.0, 846.0, 1700.0, 4194.0, 21416.0, 11306.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 194.0, 0.0, 156.0, 34.0, 342.0, 928.0, 2900.8, 1677.6, 5138.4, 16346.4, 14942.4, 22184.0, 24518.0, 18752.0, 12340.0, 2678.0, 2128.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 106.5, 0.0, 121.2, 18.7, 535.3, 952.8, 2462.6, 2387.3, 5328.2, 20652.0, 24376.5, 25906.2, 23898.4, 22909.4, 9280.8, 5877.5, 3403.1, 98.1, 185.5, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 40296.0, "acum25": 64843.6, "total25": 125259.6, "pico": {"semana": 41, "kg": 25906.2}}, "TDBA|VENTURA": {"nombre": "TDBA · VENTURA", "plan": 8000.0, "real26": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 12.0, 0.0, 0.0, 78.0, 0.0, 204.0, 664.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "real25": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 307.2, 870.0, 460.0, 1308.0, 0.0, 2260.0, 598.0, 518.0, 58.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "modelo": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 25.9, 0.0, 83.4, 67.2, 156.1, 281.7, 765.3, 1163.4, 1258.4, 508.7, 1770.1, 776.6, 964.7, 178.6, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "acum26": 958.0, "acum25": 1637.2, "total25": 6379.2, "pico": {"semana": 44, "kg": 1770.1}}}, "banda": {"2020": [0.0, 0.0, 0.0, 0.00048, 0.00123, 0.00287, 0.00424, 0.00574, 0.00786, 0.01, 0.01418, 0.02026, 0.02585, 0.03442, 0.04487, 0.05693, 0.07778, 0.11088, 0.18081, 0.27401, 0.45915, 0.58974, 0.72953, 0.84562, 0.90701, 0.95944, 0.98174, 0.9939, 0.99921, 1.0, 1.0, 1.0], "2021": [0.0, 0.0003, 0.0003, 0.00037, 0.00041, 0.00041, 0.00041, 0.00191, 0.00391, 0.00622, 0.00811, 0.01331, 0.02015, 0.02988, 0.04838, 0.07215, 0.10805, 0.16577, 0.28226, 0.40696, 0.58049, 0.73353, 0.81504, 0.85835, 0.90915, 0.96202, 0.98978, 0.99987, 1.0, 1.0, 1.0, 1.0], "2022": [0.0, 0.0, 0.0, 0.0, 0.00031, 0.00039, 0.00085, 0.002, 0.00354, 0.00769, 0.01553, 0.02042, 0.02837, 0.03772, 0.05481, 0.07063, 0.09912, 0.16004, 0.24418, 0.36788, 0.49747, 0.60464, 0.73448, 0.82662, 0.89482, 0.94874, 0.97236, 0.9907, 0.99813, 1.0, 1.0, 1.0], "2023": [0.0, 0.0, 0.0, 0.0, 0.0, 3e-05, 0.00018, 0.00046, 0.00055, 0.00116, 0.00358, 0.00954, 0.01934, 0.03599, 0.0548, 0.07772, 0.10764, 0.15125, 0.25057, 0.35676, 0.51215, 0.61527, 0.74194, 0.86367, 0.93358, 0.97562, 0.98785, 1.0, 1.0, 1.0, 1.0, 1.0], "2024": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2e-05, 9e-05, 0.0002, 0.00047, 0.00122, 0.00256, 0.00323, 0.00576, 0.01003, 0.03088, 0.08767, 0.20587, 0.37383, 0.5265, 0.6647, 0.80183, 0.90796, 0.93536, 0.99089, 0.99683, 0.99953, 1.0, 1.0, 1.0, 1.0, 1.0], "2025": [0.0, 0.0, 0.00012, 0.00025, 0.00051, 0.00076, 0.00152, 0.00453, 0.00651, 0.00908, 0.01251, 0.01742, 0.02623, 0.04119, 0.05624, 0.0714, 0.1118, 0.16579, 0.27223, 0.41693, 0.57551, 0.7474, 0.85449, 0.93783, 0.97036, 0.9855, 0.98939, 0.99306, 0.99471, 0.99813, 0.9985, 1.0], "2026_real": [0.00013, 0.00013, 0.00038, 0.00166, 0.00272, 0.00275, 0.00352, 0.00476, 0.00629, 0.00974, 0.01734, 0.02312, 0.02825, 0.03584, 0.0473, 0.06057, 0.08409, 0.1551, 0.22568, 0.22568, 0.22568, 0.22568, 0.22568, 0.22568, 0.22568, 0.22568, 0.22568, 0.22568, 0.22568, 0.22568, 0.22568, 0.22568], "2026_modelo": [0.0, 0.0, 5e-05, 0.0002, 0.00038, 0.00061, 0.00089, 0.00161, 0.00311, 0.0047, 0.00654, 0.00927, 0.01373, 0.02145, 0.03321, 0.04884, 0.07724, 0.13741, 0.23827, 0.37445, 0.52233, 0.66521, 0.79354, 0.88448, 0.94342, 0.97541, 0.98544, 0.98888, 0.99117, 0.99344, 0.99542, 1.0]}, "timing": {"2020": {"primera": 25, "p50": 43, "p95": 47, "alta": 42}, "2021": {"primera": 23, "p50": 42, "p95": 47, "alta": 42}, "2022": {"primera": 26, "p50": 43, "p95": 48, "alta": 44}, "2023": {"primera": 27, "p50": 42, "p95": 47, "alta": 42}, "2024": {"primera": 28, "p50": 41, "p95": 46, "alta": 40}, "2025": {"primera": 24, "p50": 42, "p95": 46, "alta": 43}, "2026 modelo": {"primera": 24, "p50": 42, "p95": 47, "alta": 42}}, "grupos": [{"grupo": "SNOWCHASER", "plan": 394722.0, "real": 182739.4, "pct_real": 0.463, "pct_normal": 0.6316, "adelanto": -1.11}, {"grupo": "RESTO", "plan": 1012656.3, "real": 134875.0, "pct_real": 0.1332, "pct_normal": 0.2401, "adelanto": -0.54}], "corrimientos": [{"finca": "FAZ", "grupo": "RESTO", "plan": 190995.0, "real": 18123.0, "pct_real": 0.0949, "pct_normal": 0.1377, "adelanto": -0.57, "metodo": "ajuste propio"}, {"finca": "RF", "grupo": "RESTO", "plan": 148932.8, "real": 13206.0, "pct_real": 0.0887, "pct_normal": 0.125, "adelanto": -0.37, "metodo": "ajuste propio"}, {"finca": "SL", "grupo": "RESTO", "plan": 23500.3, "real": 9234.0, "pct_real": 0.3929, "pct_normal": 0.474, "adelanto": -0.47, "metodo": "ajuste propio"}, {"finca": "TDA", "grupo": "RESTO", "plan": 180819.1, "real": 12989.0, "pct_real": 0.0718, "pct_normal": 0.1294, "adelanto": -0.66, "metodo": "ajuste propio"}, {"finca": "TDB", "grupo": "RESTO", "plan": 204309.8, "real": 32945.0, "pct_real": 0.1613, "pct_normal": 0.1768, "adelanto": -0.14, "metodo": "ajuste propio"}, {"finca": "TDBA", "grupo": "RESTO", "plan": 264099.3, "real": 48378.0, "pct_real": 0.1832, "pct_normal": 0.3979, "adelanto": -1.0, "metodo": "ajuste propio (recortado)"}, {"finca": "FAZ", "grupo": "SNOWCHASER", "plan": 43721.3, "real": 27153.0, "pct_real": 0.621, "pct_normal": 0.7163, "adelanto": -0.7, "metodo": "ajuste propio"}, {"finca": "SL", "grupo": "SNOWCHASER", "plan": 91100.1, "real": 41464.4, "pct_real": 0.4552, "pct_normal": 0.7012, "adelanto": -2.59, "metodo": "ajuste propio"}, {"finca": "TDA", "grupo": "SNOWCHASER", "plan": 142894.7, "real": 66970.0, "pct_real": 0.4687, "pct_normal": 0.549, "adelanto": -0.39, "metodo": "ajuste propio"}, {"finca": "TDB", "grupo": "SNOWCHASER", "plan": 117005.9, "real": 47152.0, "pct_real": 0.403, "pct_normal": 0.5598, "adelanto": -0.76, "metodo": "ajuste propio"}], "meseta": {"ini": 41, "fin": 44, "pct": 0.5553, "alta": 42}, "desvio": {"modelo_anterior": 459812.0, "real": 317614.0, "pct": 0.4477, "recalibrado": 335331.0}, "proyeccion": {"mezcla": 972145.0, "compania": 1050015.0, "min": 849617.0, "max": 1756626.0}, "clima": {"hs_frio": {"2021": 517.0, "2022": 638.0, "2023": 245.0, "2024": 514.0, "2025": 463.0, "2026": 299.0}, "ultimo": "2026-09-06", "origen": "Excel: informe_historico.xlsx"}, "avisos": ["Cosecha: 1 registros fuera de las semanas 22-53, 1,002 kg — EXCLUIDOS: [{'finca': 'SL', 'variedad': 'SNOWCHASER', 'semana': 1, 'kg': 1002.0}]", "Cosecha: FAZ tiene recibidos +6.6% contra cosechados (el histórico da +2%). Es medición, no producción: revisar el kg/wenco asumido en la carga de campo.", "Cosecha: RF tiene recibidos +8.4% contra cosechados (el histórico da +2%). Es medición, no producción: revisar el kg/wenco asumido en la carga de campo.", "Cosecha: SL tiene recibidos +6.5% contra cosechados (el histórico da +2%). Es medición, no producción: revisar el kg/wenco asumido en la carga de campo.", "Cosecha: TDB tiene recibidos +6.2% contra cosechados (el histórico da +2%). Es medición, no producción: revisar el kg/wenco asumido en la carga de campo.", "Plan reconstruido desde la curva anterior (Curva_Detalle), no desde el PLAN PRODUCTIVO original.", "Histórico: se excluyeron fincas ajenas al Plan ({'3J': 41904.0, 'FOR': 47510.0, 'JL ARANDANOS': 7162.0, 'MR': 24886.0, 'NOA': 5284.0}) — 126,746 kg, todos en 2020-2021.", "Histórico: se descartaron 243 filas sin año, semana o kilos.", "Histórico: 48 filas fuera de las semanas 22-53 (1,580 kg) — excluidas.", "Clima leído del Excel, no de Supabase: la anon key de config/.env no está configurada o la API la rechazó. Se actualiza cuando se actualice el archivo.", "Forma: respaldo usado -> {'finca+variedad': 56, 'variedad': 1, 'finca': 0, 'global': 0}.", "Guardarraíl: TDBA/RESTO midió -1.61 sem, por encima de ±1. Se recorta.", "Variedad sin plan: CHICKADEE lleva 1,038 kg cosechados en FAZ y no figura en el Plan 2026. Esos kilos no los espera el modelo."], "estimacion": {"corte": 40, "anios": [2021, 2022, 2023, 2024, 2025], "anterior": 2025, "total": 1188814.0, "bajo": 1032728.0, "alto": 1368776.0, "total_anterior": 1238877.0, "peso_cosechado": 0.253, "grupos": {"SNOWCHASER": {"cosechado": 182739.4, "estimado": 319957.0, "bajo": 271377.0, "alto": 377233.0, "por_cosechado": 313059.0, "fraccion_normal": 0.5837, "fraccion_anterior": 0.5479, "real_anterior": 327410.0, "peso_cosechado": 0.514, "fracciones": [{"anio": 2021, "fraccion": 0.5864, "peso": 0.0}, {"anio": 2022, "fraccion": 0.5176, "peso": 0.0}, {"anio": 2023, "fraccion": 0.4897, "peso": 1.0}, {"anio": 2024, "fraccion": 0.7008, "peso": 2.0}, {"anio": 2025, "fraccion": 0.5479, "peso": 3.0}], "incert_cosechado": 0.1793, "incert_base": 0.1843, "incert_final": 0.1285, "cambios_anuales": [0.3103, -0.1268, 0.0181, -0.0985], "acum_anterior": 179392.4, "si_iguala_anterior": 316932.0}, "RESTO": {"cosechado": 134875.0, "estimado": 868857.0, "bajo": 761351.0, "alto": 991543.0, "por_cosechado": 671634.0, "fraccion_normal": 0.2008, "fraccion_anterior": 0.1732, "real_anterior": 911467.0, "peso_cosechado": 0.157, "fracciones": [{"anio": 2021, "fraccion": 0.2236, "peso": 0.0}, {"anio": 2022, "fraccion": 0.1601, "peso": 0.0}, {"anio": 2023, "fraccion": 0.1739, "peso": 1.0}, {"anio": 2024, "fraccion": 0.2695, "peso": 2.0}, {"anio": 2025, "fraccion": 0.1732, "peso": 3.0}], "incert_cosechado": 0.2603, "incert_base": 0.1122, "incert_final": 0.1031, "cambios_anuales": [-0.178, -0.1631, 0.0233, -0.1988], "acum_anterior": 157861.7, "si_iguala_anterior": 890563.0}}, "area": [{"anio": 2020, "ha": 287.7, "kg": 2263616.0, "kg_ha": 7869.0}, {"anio": 2021, "ha": 281.6, "kg": 1927884.0, "kg_ha": 6847.0}, {"anio": 2022, "ha": 272.3, "kg": 1736934.0, "kg_ha": 6380.0}, {"anio": 2023, "ha": 262.2, "kg": 1468520.0, "kg_ha": 5601.0}, {"anio": 2024, "ha": 230.9, "kg": 1500864.0, "kg_ha": 6499.0}, {"anio": 2025, "ha": 238.2, "kg": 1238877.0, "kg_ha": 5201.0}]}, "historial_estimacion": [{"corte": 33, "fecha": "2026-09-29", "origen": "reconstruido", "total": 1255427.0, "bajo": 1062390.0, "alto": 1485779.0, "snowchaser": 343960.0, "resto": 911467.0, "peso_cosechado": 0.012, "modelo": null, "plan": 1407378.0}, {"corte": 34, "fecha": "2026-09-29", "origen": "reconstruido", "total": 1190510.0, "bajo": 1013518.0, "alto": 1401126.0, "snowchaser": 338858.0, "resto": 851652.0, "peso_cosechado": 0.104, "modelo": null, "plan": 1407378.0}, {"corte": 35, "fecha": "2026-09-29", "origen": "reconstruido", "total": 1216532.0, "bajo": 1032814.0, "alto": 1435351.0, "snowchaser": 337069.0, "resto": 879463.0, "peso_cosechado": 0.059, "modelo": null, "plan": 1407378.0}, {"corte": 36, "fecha": "2026-09-29", "origen": "reconstruido", "total": 1217580.0, "bajo": 1034285.0, "alto": 1435696.0, "snowchaser": 337713.0, "resto": 879867.0, "peso_cosechado": 0.065, "modelo": null, "plan": 1407378.0}, {"corte": 37, "fecha": "2026-09-29", "origen": "reconstruido", "total": 1262028.0, "bajo": 1076291.0, "alto": 1480853.0, "snowchaser": 349806.0, "resto": 912222.0, "peso_cosechado": 0.081, "modelo": null, "plan": 1407378.0}, {"corte": 38, "fecha": "2026-09-29", "origen": "reconstruido", "total": 1211054.0, "bajo": 1059754.0, "alto": 1383986.0, "snowchaser": 346546.0, "resto": 864508.0, "peso_cosechado": 0.276, "modelo": null, "plan": 1407378.0}, {"corte": 39, "fecha": "2026-10-02", "origen": "corrida", "total": 1203955.0, "bajo": 1055131.0, "alto": 1374304.0, "snowchaser": 342339.0, "resto": 861616.0, "peso_cosechado": 0.368, "modelo": 1094467.0, "plan": 1407378.0}, {"corte": 40, "fecha": "2026-10-05", "origen": "corrida", "total": 1188814.0, "bajo": 1032728.0, "alto": 1368776.0, "snowchaser": 319957.0, "resto": 868857.0, "peso_cosechado": 0.253, "modelo": 972145.0, "plan": 1407378.0}]};
+const S = D.semanas, CORTE = D.corte, ANT = String(D.anterior), P = D.parcial;
+const FINCAS = D.fincas_orden;
+const SEM_MIN = S[0], SEM_MAX = S[S.length-1];
+
+const n0 = v => Math.round(v).toLocaleString('es-AR');
+const pc = (v,d=1) => (v*100).toLocaleString('es-AR',{minimumFractionDigits:d,maximumFractionDigits:d})+'%';
+const sg = v => (v>0?'+':'') + v.toLocaleString('es-AR',{minimumFractionDigits:1,maximumFractionDigits:1});
+const el = (t,c,h) => { const e=document.createElement(t); if(c)e.className=c; if(h!=null)e.innerHTML=h; return e; };
+const ix = s => S.indexOf(s);
+const suma = (arr,i0,i1) => i1<i0 ? 0 : arr.slice(i0,i1+1).reduce((a,b)=>a+b,0);
+
+/* Estado de los dos filtros. 'TOTAL' = las 6 fincas sumadas. */
+const F = { finca:'TOTAL', variedad:'TODAS', desde:SEM_MIN, hasta:SEM_MAX };
+const filtrado = () => F.finca!=='TOTAL' || F.variedad!=='TODAS' || F.desde!==SEM_MIN || F.hasta!==SEM_MAX;
+
+/* Un combo finca×variedad que no existe no es un error: esa variedad no se
+   planta en ese campo. Devuelve ceros y la vista lo dice. */
+const CERO = { nombre:'—', plan:0, acum26:0, acum25:0, total25:0,
+  real26:S.map(()=>0), real25:S.map(()=>0), modelo:S.map(()=>0),
+  pico:{semana:0,kg:0}, parcial:{real:0,modelo:0}, grupo:'', fincas:[] };
+
+function serieDe(f,v){
+  if(v==='TODAS') return D.por_finca[f] || CERO;
+  if(f==='TOTAL') return D.por_variedad[v] || CERO;
+  return D.por_fv[`${f}|${v}`] || CERO;
+}
+const dato = () => serieDe(F.finca, F.variedad);
+const existe = () => F.finca==='TOTAL' || F.variedad==='TODAS' || !!D.por_fv[`${F.finca}|${F.variedad}`];
+/* Las variedades que tiene el campo elegido (todas, si no hay campo elegido). */
+const variedadesDe = f => f==='TOTAL' ? D.variedades_orden
+  : D.variedades_orden.filter(v=>D.por_fv[`${f}|${v}`]);
+const nombreFinca = () => F.finca==='TOTAL' ? 'las 6 fincas' : `${F.finca} (${D.por_finca[F.finca].nombre})`;
+const nombre = () => F.variedad==='TODAS' ? nombreFinca() : `${F.variedad} en ${nombreFinca()}`;
+const rangoTxt = () => F.desde===F.hasta ? `la semana ${F.desde}` : `las semanas ${F.desde}-${F.hasta}`;
+
+/* La ventana de comparación se recorta en la última semana CERRADA: si no, 2026
+   mide semanas que todavía no ocurrieron contra las enteras del año pasado. */
+function ventana(){
+  const i0 = ix(F.desde), i1 = Math.min(ix(F.hasta), ix(CORTE));
+  return { i0, i1, vacia: i1 < i0, recortada: ix(F.hasta) > ix(CORTE) };
+}
+
+/* ---------------- filtros ---------------- */
+(function construirFiltros(){
+  const cf = document.getElementById('chipsFinca');
+  [['TOTAL','Todas']].concat(FINCAS.map(f=>[f,f])).forEach(([v,t])=>{
+    const b = el('button','chipb',t);
+    b.type='button'; b.dataset.finca=v;
+    b.addEventListener('click',()=>{ F.finca=v; render(); });
+    cf.append(b);
+  });
+  const sv = document.getElementById('selVariedad');
+  sv.addEventListener('change',()=>{ F.variedad=sv.value; render(); });
+
+  const sd = document.getElementById('selDesde'), sh = document.getElementById('selHasta');
+  S.forEach(s=>{ sd.append(new Option(String(s),s)); sh.append(new Option(String(s),s)); });
+  sd.addEventListener('change',()=>{ F.desde=+sd.value; if(F.hasta<F.desde) F.hasta=F.desde; render(); });
+  sh.addEventListener('change',()=>{ F.hasta=+sh.value; if(F.desde>F.hasta) F.desde=F.hasta; render(); });
+
+  const presets = [
+    ['Toda la campaña', SEM_MIN, SEM_MAX],
+    ['Lo cosechado', SEM_MIN, CORTE],
+    ['Lo que viene', Math.min(CORTE+1,SEM_MAX), Math.min(CORTE+6,SEM_MAX)],
+    [`Meseta ${D.meseta.ini}-${D.meseta.fin}`, D.meseta.ini, D.meseta.fin],
+  ];
+  const cp = document.getElementById('chipsPreset');
+  presets.forEach(([t,a,b])=>{
+    const btn = el('button','chipb mini',t);
+    btn.type='button'; btn.dataset.desde=a; btn.dataset.hasta=b;
+    btn.addEventListener('click',()=>{ F.desde=a; F.hasta=b; render(); });
+    cp.append(btn);
+  });
+  document.getElementById('btnReset').addEventListener('click',()=>{
+    F.finca='TOTAL'; F.variedad='TODAS'; F.desde=SEM_MIN; F.hasta=SEM_MAX; render();
+  });
+})();
+
+function pintarFiltros(){
+  document.querySelectorAll('#chipsFinca .chipb').forEach(b=>
+    b.setAttribute('aria-pressed', String(b.dataset.finca===F.finca)));
+  document.querySelectorAll('#chipsPreset .chipb').forEach(b=>
+    b.setAttribute('aria-pressed', String(+b.dataset.desde===F.desde && +b.dataset.hasta===F.hasta)));
+  const sv = document.getElementById('selVariedad');
+  const lista = variedadesDe(F.finca);
+  if(!lista.includes(F.variedad)) F.variedad = 'TODAS';
+  sv.textContent='';
+  sv.append(new Option('Todas','TODAS'));
+  lista.forEach(v=>{
+    const b = D.por_variedad[v];
+    sv.append(new Option(b.plan>0 ? v : `${v} (sin plan)`, v));
+  });
+  sv.value = F.variedad;
+  document.getElementById('selDesde').value = F.desde;
+  document.getElementById('selHasta').value = F.hasta;
+  document.getElementById('btnReset').hidden = !filtrado();
+}
+
+/* ---------------- tiles ---------------- */
+function pintarTiles(){
+  const d = dato(), v = ventana();
+  const r26 = v.vacia ? 0 : suma(d.real26, v.i0, v.i1);
+  const r25 = v.vacia ? 0 : suma(d.real25, v.i0, v.i1);
+  const mod = suma(d.modelo, ix(F.desde), ix(F.hasta));
+  const falta = suma(d.modelo, Math.max(ix(F.desde), ix(CORTE)+1), ix(F.hasta));
+  const dl = r25>0 ? r26/r25-1 : null;
+  // Con un rango enteramente a futuro no hay cosecha que comparar, pero sí
+  // sirve saber cómo se para el pronóstico contra lo que dio el año pasado.
+  const a25 = suma(d.real25, ix(F.desde), ix(F.hasta));
+  const dm = v.vacia && a25>0 ? mod/a25-1 : null;
+  const tiles = [
+    { k:'Cosechado', v:n0(r26), u:'kg',
+      s: v.vacia ? `no hay semanas cerradas en ${rangoTxt()}`
+                 : `${pc(r26/d.plan)} del plan de ${nombre()}` },
+    v.vacia
+      ? { k:`Modelo contra ${ANT}`, v: dm===null ? '—' : sg(dm*100)+'%', u:'',
+          s: dm===null ? `${ANT} no tiene cosecha en ${rangoTxt()}`
+                       : `pronóstico ${n0(mod)} vs ${n0(a25)} kg que dio ${ANT}` }
+      : { k:`Contra ${ANT}`, v: dl===null ? '—' : sg(dl*100)+'%', u:'',
+          s: dl===null ? `${ANT} no tiene cosecha en ese rango`
+                       : `${n0(r26)} vs ${n0(r25)} kg en ${rangoTxt()}` },
+    { k:'Modelo en el rango', v:n0(mod), u:'kg',
+      s: falta>0 ? `faltan cosechar ${n0(falta)} kg` : 'rango ya cosechado' },
+    { k:'Pico de campaña', v:`sem ${D.meseta.ini}–${D.meseta.fin}`, u:'',
+      s:`${pc(D.meseta.pct,0)} del volumen en 4 semanas` },
+  ];
+  const cont = document.getElementById('tiles');
+  cont.textContent='';
+  cont.append(...tiles.map(t=>{
+    const e = el('div','tile');
+    e.append(el('div','k',t.k), el('div','v',`${t.v}${t.u?` <span class="u">${t.u}</span>`:''}`), el('div','s',t.s));
+    return e;
+  }));
+}
+
+/* ---------------- sparkline (respeta el rango) ---------------- */
+function spark(d,i0,i1){
+  const W=124,H=30,Pd=2;
+  const a=d.real25.slice(i0,i1+1), b=d.real26.slice(i0,i1+1), n=a.length;
+  const max = Math.max(...a, ...b, 1);
+  const y = v => H-Pd - (v/max)*(H-2*Pd);
+  if(n<2) return `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" aria-hidden="true" style="display:block">
+      <circle cx="${(W/2-8).toFixed(1)}" cy="${y(a[0]||0).toFixed(1)}" r="3" fill="var(--pasado)"/>
+      <circle cx="${(W/2+8).toFixed(1)}" cy="${y(b[0]||0).toFixed(1)}" r="3" fill="var(--real)"/></svg>`;
+  const x = i => Pd + i*(W-2*Pd)/(n-1);
+  const linea = arr => arr.map((v,i)=>`${i?'L':'M'}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join('');
+  let g = `<path d="${linea(a)}" fill="none" stroke="var(--pasado)" stroke-width="1.6" stroke-linejoin="round"/>`;
+  const kC = Math.min(ix(CORTE), i1) - i0;
+  if(kC>=1) g += `<path d="${linea(b.slice(0,kC+1))}" fill="none" stroke="var(--real)" stroke-width="2" stroke-linejoin="round"/>`;
+  if(kC>=0) g += `<circle cx="${x(kC).toFixed(1)}" cy="${y(b[kC]).toFixed(1)}" r="2.6" fill="var(--real)"/>`;
+  return `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" aria-hidden="true" style="display:block">${g}</svg>`;
+}
+
+/* ---------------- cada campo contra el año pasado ---------------- */
+function pintarComp(){
+  const v = ventana();
+  document.getElementById('legAnt').textContent = ANT;
+  document.getElementById('shComp').textContent = v.vacia
+    ? 'sin semanas cerradas en el rango'
+    : `semanas ${S[v.i0]}-${S[v.i1]} · cerradas` + (F.variedad==='TODAS'?'':` · ${F.variedad}`);
+  document.getElementById('subComp').innerHTML =
+    `Acumulado en las semanas <b>cerradas</b> del rango, campo por campo`
+    + (F.variedad==='TODAS' ? '. ' : `, sólo <b>${F.variedad}</b>. `)
+    + (v.recortada && !v.vacia
+        ? `El rango llega a la semana ${F.hasta}, pero la comparación corta en la ${CORTE}: es la última cerrada, y más allá 2026 todavía no tiene con qué competir. ` : '')
+    + `<b>% del plan</b> se lee contra <b>% a la misma altura</b> — lo que ese campo llevaba del año pasado en esas mismas semanas. Eso separa "viene atrasado" de "tiene menos fruta".`;
+
+  const t = document.getElementById('tComp');
+  t.textContent='';
+  if(v.vacia){
+    t.innerHTML = `<tbody><tr><td class="vacio">El rango elegido no incluye ninguna semana cerrada. La última con datos completos es la ${CORTE}.</td></tr></tbody>`;
+    return;
+  }
+  t.innerHTML = `<thead><tr>
+    <th>Campo</th><th>Plan 2026</th><th>Real sem ${S[v.i0]}-${S[v.i1]}</th><th>${ANT} mismas sem</th>
+    <th>Diferencia</th><th>% del plan</th><th>% a la misma altura</th><th>Curva</th></tr></thead>`;
+  const tb = el('tbody');
+  [...FINCAS,'TOTAL'].forEach(f=>{
+    const d = serieDe(f, F.variedad);
+    const r26 = suma(d.real26, v.i0, v.i1), r25 = suma(d.real25, v.i0, v.i1);
+    const dl = r25>0 ? r26/r25-1 : null;
+    const cls = dl===null?'fl':(dl>=0.03?'up':(dl<=-0.03?'dn':'fl'));
+    const ico = dl===null?'':(dl>=0.03?'▲':(dl<=-0.03?'▼':'='));
+    const tr = el('tr', [f==='TOTAL'?'tot':'clic', f===F.finca?'sel':''].filter(Boolean).join(' '));
+    tr.innerHTML = `
+      <td>${f==='TOTAL'?'<span class="fn">Las 6 fincas</span>':`<span class="fn">${f}</span><span class="fl">${D.por_finca[f].nombre}</span>`}</td>
+      <td class="num">${n0(d.plan)}</td>
+      <td class="num">${n0(r26)}</td>
+      <td class="num">${n0(r25)}</td>
+      <td>${dl===null?'<span class="chip fl">—</span>':`<span class="chip ${cls}">${ico} ${sg(dl*100)}%</span>`}</td>
+      <td class="num">${d.plan>0?pc(r26/d.plan):'—'}</td>
+      <td class="num" style="color:var(--ink-2)">${d.total25>0?pc(r25/d.total25):'—'}</td>
+      <td style="padding:4px 12px">${spark(d, v.i0, v.i1)}</td>`;
+    if(f!=='TOTAL') tr.addEventListener('click',()=>{ F.finca = F.finca===f ? 'TOTAL' : f; render(); });
+    tb.append(tr);
+  });
+  t.append(tb);
+}
+
+/* ---------------- cada variedad contra el año pasado ---------------- */
+function pintarVariedades(){
+  const v = ventana(), lista = variedadesDe(F.finca);
+  document.getElementById('shVar').textContent = v.vacia
+    ? 'sin semanas cerradas en el rango'
+    : `semanas ${S[v.i0]}-${S[v.i1]} · ${nombreFinca()}`;
+  document.getElementById('subVar').innerHTML =
+    `Las mismas semanas cerradas, abiertas por variedad en <b>${nombreFinca()}</b>. `
+    + `Acá se ve si el atraso del grueso es parejo o son dos o tres variedades puntuales. `
+    + `Una variedad marcada <b>sin plan</b> se está cosechando sin que el modelo la espere: está en los avisos de abajo.`;
+  const t = document.getElementById('tVar');
+  t.textContent='';
+  if(v.vacia){
+    t.innerHTML = `<tbody><tr><td class="vacio">El rango elegido no incluye ninguna semana cerrada. La última con datos completos es la ${CORTE}.</td></tr></tbody>`;
+    return;
+  }
+  t.innerHTML = `<thead><tr><th>Variedad</th><th>Grupo</th><th>Plan 2026</th>
+    <th>Real sem ${S[v.i0]}-${S[v.i1]}</th><th>${ANT} mismas sem</th><th>Diferencia</th>
+    <th>% del plan</th><th>% a la misma altura</th><th>Curva</th></tr></thead>`;
+  const tb = el('tbody');
+  const fila = (clave, etiqueta, clases) => {
+    const d = serieDe(F.finca, clave);
+    const r26 = suma(d.real26, v.i0, v.i1), r25 = suma(d.real25, v.i0, v.i1);
+    const dl = r25>0 ? r26/r25-1 : null;
+    const cls = dl===null?'fl':(dl>=0.03?'up':(dl<=-0.03?'dn':'fl'));
+    const ico = dl===null?'':(dl>=0.03?'▲':(dl<=-0.03?'▼':'='));
+    const b = D.por_variedad[clave];
+    const grupo = clave==='TODAS' ? '' : (b && b.grupo==='SNOWCHASER' ? 'Snowchaser' : 'Resto');
+    const tr = el('tr', clases);
+    tr.innerHTML = `
+      <td><span class="fn">${etiqueta}</span>${clave!=='TODAS'&&d.plan===0?'<span class="fl">sin plan 2026</span>':''}</td>
+      <td style="text-align:left;color:var(--ink-2)">${grupo}</td>
+      <td class="num">${n0(d.plan)}</td>
+      <td class="num">${n0(r26)}</td>
+      <td class="num">${n0(r25)}</td>
+      <td>${dl===null?'<span class="chip fl">—</span>':`<span class="chip ${cls}">${ico} ${sg(dl*100)}%</span>`}</td>
+      <td class="num">${d.plan>0?pc(r26/d.plan):'—'}</td>
+      <td class="num" style="color:var(--ink-2)">${d.total25>0?pc(r25/d.total25):'—'}</td>
+      <td style="padding:4px 12px">${spark(d, v.i0, v.i1)}</td>`;
+    if(clave!=='TODAS') tr.addEventListener('click',()=>{ F.variedad = F.variedad===clave?'TODAS':clave; render(); });
+    tb.append(tr);
+  };
+  lista.forEach(vr => fila(vr, vr, ['clic', vr===F.variedad?'sel':''].filter(Boolean).join(' ')));
+  fila('TODAS', 'Todas las variedades', 'tot');
+  t.append(tb);
+}
+
+/* ---------------- semana a semana ---------------- */
+function pintarSemanas(){
+  const d = dato(), i0 = ix(F.desde), i1 = ix(F.hasta);
+  document.getElementById('shSem').textContent = `${nombre()} · ${rangoTxt()}`;
+  document.getElementById('subSem').innerHTML =
+    `Cada semana del rango para <b>${nombre()}</b>. Hasta la ${CORTE} es cosecha real; `
+    + (P?`la ${P.semana} está en curso y lo cargado es parcial; `:'')
+    + `de ahí en adelante es pronóstico del modelo.`;
+  const t = document.getElementById('tSem');
+  t.innerHTML = `<thead><tr><th>Semana</th><th>2026 real</th><th>${ANT} real</th>
+    <th>Diferencia</th><th>2026 modelo</th><th>Real vs modelo</th><th>Estado</th></tr></thead>`;
+  const tb = el('tbody');
+  for(let i=i0;i<=i1;i++){
+    const s = S[i];
+    const curso = !!(P && s===P.semana), cerrada = s<=CORTE;
+    const hay = cerrada || curso;
+    const r26=d.real26[i], r25=d.real25[i], mod=d.modelo[i];
+    const dl = hay && r25>0 ? r26/r25-1 : null;
+    const vm = hay && mod>0 ? r26/mod-1 : null;
+    const cls = dl===null?'fl':(dl>=0.03?'up':(dl<=-0.03?'dn':'fl'));
+    const ico = dl===null?'':(dl>=0.03?'▲':(dl<=-0.03?'▼':'='));
+    const tr = el('tr', curso?'curso':'');
+    tr.innerHTML = `<td><span class="fn">${s}</span></td>
+      <td class="num">${hay?n0(r26):'—'}</td>
+      <td class="num" style="color:var(--ink-2)">${n0(r25)}</td>
+      <td>${dl===null?'<span class="chip fl">—</span>':`<span class="chip ${cls}">${ico} ${sg(dl*100)}%</span>`}</td>
+      <td class="num" style="color:var(--modelo)">${n0(mod)}</td>
+      <td class="num">${vm===null?'—':sg(vm*100)+'%'}</td>
+      <td><span class="est ${curso?'c':''}">${curso?'en curso · parcial':(cerrada?'cerrada':'pronóstico')}</span></td>`;
+    tb.append(tr);
+  }
+  t.append(tb);
+}
+
+/* ---------------- lo que viene ---------------- */
+function pintarProx(){
+  const desde = P ? P.semana : CORTE+1;
+  const prox = S.filter(s=>s>=desde).slice(0,4);
+  const laQueViene = P ? P.semana+1 : CORTE+1;
+  const t = document.getElementById('tProx');
+  t.textContent='';
+  document.getElementById('shProx').textContent = prox.length?`semanas ${prox[0]}–${prox[prox.length-1]}`:'—';
+  if(!prox.length){ t.innerHTML=`<tbody><tr><td class="vacio">La campaña ya terminó en el modelo.</td></tr></tbody>`; return; }
+  t.innerHTML = `<thead><tr><th>Campo</th>`
+    + (P?`<th style="color:var(--real)">Sem ${P.semana} real (parcial)</th>`:'')
+    + prox.map(s=>`<th${s===laQueViene?' style="color:var(--real)"':''}>Sem ${s} modelo${P&&s===P.semana?' (en curso)':(s===laQueViene?' (la que viene)':'')}</th>`).join('')
+    + `<th>Semana pico</th></tr></thead>`;
+  const tb = el('tbody');
+  const filas = F.finca==='TOTAL' ? [...FINCAS,'TOTAL'] : [F.finca];
+  filas.forEach(f=>{
+    const d = serieDe(f, F.variedad);
+    const tr = el('tr', f==='TOTAL'?'tot':(f===F.finca?'sel':''));
+    tr.innerHTML = `<td>${f==='TOTAL'?'<span class="fn">Las 6 fincas</span>':`<span class="fn">${f}</span>`}</td>`
+      + (P?`<td class="num" style="font-weight:600;color:var(--real)">${n0(d.parcial.real)}</td>`:'')
+      + prox.map(s=>`<td class="num"${s===laQueViene?' style="font-weight:600"':''}>${n0(d.modelo[ix(s)])}</td>`).join('')
+      + `<td class="num" style="color:var(--ink-2)">sem ${d.pico.semana} · ${n0(d.pico.kg)}</td>`;
+    tb.append(tr);
+  });
+  t.append(tb);
+  barrasProx(prox, laQueViene);
+}
+
+function barrasProx(prox, laQueViene){
+  const svg = document.getElementById('svgProx'), tip = document.getElementById('tipProx');
+  const W=900,H=250,L=58,R=14,Tp=14,B=40;
+  const max = Math.max(...FINCAS.flatMap(f=>prox.map(s=>serieDe(f,F.variedad).modelo[ix(s)])), 1);
+  const step = (W-L-R)/FINCAS.length, bw = Math.min(26,(step-16)/prox.length);
+  const y = v => H-B - (v/max)*(H-B-Tp);
+  let g='';
+  for(let i=0;i<=4;i++){ const val=max*i/4, yy=y(val);
+    g += `<line x1="${L}" y1="${yy.toFixed(1)}" x2="${W-R}" y2="${yy.toFixed(1)}" stroke="var(--line)" stroke-width="1"/>`
+       + `<text x="${L-9}" y="${(yy+4).toFixed(1)}" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="var(--mono)">${n0(val)}</text>`;
+  }
+  const marks=[];
+  FINCAS.forEach((f,i)=>{
+    const activa = F.finca==='TOTAL' || F.finca===f;
+    const cx = L + step*i + step/2, wTot = bw*prox.length + 2*(prox.length-1);
+    prox.forEach((s,j)=>{
+      const v = serieDe(f,F.variedad).modelo[ix(s)];
+      const x = cx - wTot/2 + j*(bw+2), h = Math.max(0,(H-B)-y(v));
+      const lleno = s===laQueViene;
+      const extra = (lleno?'':' stroke="var(--real)" stroke-width="1"') + (activa?'':' opacity="0.22"');
+      g += `<rect x="${x.toFixed(1)}" y="${y(v).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" rx="3" fill="${lleno?'var(--real)':'var(--real-wash)'}"${extra}/>`;
+      if(activa) marks.push({x:x+bw/2, y:y(v), f, s, v});
+    });
+    g += `<text x="${cx.toFixed(1)}" y="${H-B+19}" text-anchor="middle" font-size="12" fill="${activa?'var(--ink-2)':'var(--ink-3)'}" font-weight="${activa?500:400}"${activa?'':' opacity="0.5"'}>${f}</text>`;
+  });
+  g += `<line x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}" stroke="var(--line-2)" stroke-width="1"/>`;
+  g += `<text x="${L}" y="${H-8}" font-size="11" fill="var(--ink-3)">barra llena = semana ${laQueViene}, la que viene · kg</text>`;
+  svg.innerHTML = g;
+  svg.onmousemove = e=>{
+    const r = svg.getBoundingClientRect(), sx = W/r.width;
+    const px=(e.clientX-r.left)*sx, py=(e.clientY-r.top)*sx;
+    let best=null, bd=Infinity;
+    marks.forEach(m=>{ const dd=Math.hypot(m.x-px,(m.y+(H-B-m.y)/2)-py); if(dd<bd){bd=dd;best=m;} });
+    if(!best || bd>48){ tip.style.opacity=0; return; }
+    tip.innerHTML = `<div class="tt">${best.f} · semana ${best.s}</div>
+      <div class="tr"><span><i class="sw" style="background:var(--real)"></i> kg modelo</span><span>${n0(best.v)}</span></div>`;
+    tip.style.opacity=1;
+    tip.style.left = Math.min(Math.max(best.x/sx-66,4), r.width-142)+'px';
+    tip.style.top = Math.max(best.y/sx-58,4)+'px';
+  };
+  svg.onmouseleave = ()=>{ tip.style.opacity=0; };
+}
+
+/* ---------------- la curva ---------------- */
+function pintarCurva(){
+  const d = dato(), i0 = ix(F.desde), i1 = ix(F.hasta), sub = S.slice(i0,i1+1), n = sub.length;
+  const a=d.real25, b=d.real26, m=d.modelo;
+  const iCorte = ix(CORTE), iP = P ? ix(P.semana) : iCorte;
+  document.getElementById('shCurva').textContent = `${nombre()} · ${rangoTxt()}`;
+  document.getElementById('legAnt2').textContent = `${ANT} real`;
+  document.getElementById('subCurva').innerHTML =
+    `Kilos por semana de <b>${nombre()}</b>.`
+    + (F.desde<=D.meseta.ini && F.hasta>=D.meseta.fin
+        ? ` La franja marca la meseta: cuatro semanas que concentran la mitad de la campaña. No hay un pico — entre las dos centrales hay décimas de diferencia, así que se planifica sobre el rango, no sobre una semana.`
+        : ` La meseta de la campaña son las semanas ${D.meseta.ini}-${D.meseta.fin}.`);
+
+  const svg = document.getElementById('svgCurva'), tip = document.getElementById('tipCurva');
+  const W=900,H=330,L=62,R=16,Tp=16,B=42;
+  const picos = sub.map((s,k)=>{ const i=i0+k; return Math.max(a[i], m[i], i<=iP?b[i]:0); });
+  const max = Math.max(...picos, 1)*1.06;
+  const x = k => n<2 ? (L+W-R)/2 : L + k*(W-L-R)/(n-1);
+  const y = v => H-B - (v/max)*(H-B-Tp);
+  const linea = (arr,k0,k1) => { const p=[]; for(let k=k0;k<=k1;k++) p.push(`${p.length?'L':'M'}${x(k).toFixed(1)},${y(arr[i0+k]).toFixed(1)}`); return p.join(''); };
+  const pt = (arr,k,fill,stroke) => `<circle cx="${x(k).toFixed(1)}" cy="${y(arr[i0+k]).toFixed(1)}" r="4" fill="${fill}" stroke="${stroke}" stroke-width="2.5"/>`;
+  let g='';
+  if(F.desde<=D.meseta.fin && F.hasta>=D.meseta.ini){
+    const k1=Math.max(0, ix(D.meseta.ini)-i0), k2=Math.min(n-1, ix(D.meseta.fin)-i0);
+    g += `<rect x="${(x(k1)-6).toFixed(1)}" y="${Tp}" width="${Math.max(12,x(k2)-x(k1)+12).toFixed(1)}" height="${H-B-Tp}" fill="var(--meseta-wash)"/>`;
+    g += `<text x="${((x(k1)+x(k2))/2).toFixed(1)}" y="${Tp+14}" text-anchor="middle" font-size="11" fill="var(--modelo)" font-weight="600" font-family="var(--mono)">MESETA ${D.meseta.ini}–${D.meseta.fin}</text>`;
+  }
+  for(let i=0;i<=4;i++){ const v=max*i/4, yy=y(v);
+    g += `<line x1="${L}" y1="${yy.toFixed(1)}" x2="${W-R}" y2="${yy.toFixed(1)}" stroke="var(--line)" stroke-width="1"/>`
+       + `<text x="${L-9}" y="${(yy+4).toFixed(1)}" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="var(--mono)">${n0(v)}</text>`;
+  }
+  const paso = n>20 ? 4 : (n>10 ? 2 : 1);
+  sub.forEach((s,k)=>{ if(k%paso===0 || s===CORTE || n<=12)
+    g += `<text x="${x(k).toFixed(1)}" y="${H-B+18}" text-anchor="middle" font-size="11" fill="${s===CORTE?'var(--real)':'var(--ink-3)'}" font-family="var(--mono)" font-weight="${s===CORTE?600:400}">${s}</text>`; });
+  g += `<text x="${((L+W-R)/2).toFixed(1)}" y="${H-8}" text-anchor="middle" font-size="11" fill="var(--ink-3)">semana del año</text>`;
+  g += `<line x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}" stroke="var(--line-2)" stroke-width="1"/>`;
+
+  if(n<2){
+    const k=0;
+    g += pt(a,k,'var(--pasado)','var(--surface)') + pt(m,k,'var(--modelo)','var(--surface)');
+    if(i0<=iP) g += pt(b,k,'var(--real)','var(--surface)');
+  } else {
+    g += `<path d="${linea(a,0,n-1)}" fill="none" stroke="var(--pasado)" stroke-width="2" stroke-linejoin="round"/>`;
+    g += `<path d="${linea(m,0,n-1)}" fill="none" stroke="var(--modelo)" stroke-width="2" stroke-dasharray="5 3" stroke-linejoin="round"/>`;
+    const kC = iCorte-i0;
+    if(kC>=1) g += `<path d="${linea(b,0,Math.min(kC,n-1))}" fill="none" stroke="var(--real)" stroke-width="2.5" stroke-linejoin="round"/>`;
+  }
+  let hayParcial=false;
+  const kC = iCorte-i0, kP = iP-i0;
+  if(P && n>=2 && kP>=0 && kP<=n-1 && kC>=0 && kP>kC){
+    hayParcial=true;
+    g += `<path d="${linea(b,kC,kP)}" fill="none" stroke="var(--real)" stroke-width="2.5" stroke-dasharray="4 3" stroke-linejoin="round"/>`;
+    g += pt(b,kP,'var(--surface)','var(--real)');
+    g += `<text x="${x(kP).toFixed(1)}" y="${(y(b[iP])-12).toFixed(1)}" text-anchor="middle" font-size="11" fill="var(--real)" font-weight="600" font-family="var(--mono)">sem ${P.semana} parcial</text>`;
+  }
+  if(n>=2 && kC>=0 && kC<=n-1) g += `<circle cx="${x(kC).toFixed(1)}" cy="${y(b[iCorte]).toFixed(1)}" r="4" fill="var(--real)" stroke="var(--surface)" stroke-width="2"/>`;
+  g += `<line class="xh" x1="0" y1="${Tp}" x2="0" y2="${H-B}" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 3" opacity="0"/>`;
+  svg.innerHTML = g;
+  document.getElementById('legParcial').hidden = !hayParcial;
+  const xh = svg.querySelector('.xh');
+
+  svg.onmousemove = e=>{
+    const r = svg.getBoundingClientRect(), sx = W/r.width;
+    let k = n<2 ? 0 : Math.round(((e.clientX-r.left)*sx-L)/((W-L-R)/(n-1)));
+    k = Math.max(0,Math.min(n-1,k));
+    const i = i0+k, s = S[i];
+    xh.setAttribute('x1',x(k)); xh.setAttribute('x2',x(k)); xh.setAttribute('opacity','1');
+    const etiq = (P && s===P.semana) ? '2026 real (parcial)' : '2026 real';
+    const filas = [['var(--pasado)',ANT,a[i]],['var(--real)',etiq, i<=iP?b[i]:null],['var(--modelo)','2026 modelo',m[i]]];
+    tip.innerHTML = `<div class="tt">semana ${s}</div>` + filas.map(([c,kk,v])=>
+      `<div class="tr"><span><i class="sw" style="background:${c}"></i> ${kk}</span><span>${v==null?'—':n0(v)}</span></div>`).join('');
+    tip.style.opacity=1;
+    tip.style.left = Math.min(Math.max(x(k)/sx-76,4), r.width-156)+'px';
+    tip.style.top = '18px';
+  };
+  svg.onmouseleave = ()=>{ tip.style.opacity=0; xh.setAttribute('opacity','0'); };
+}
+
+/* ---------------- grupos y corrimientos ---------------- */
+function pintarGrupos(){
+  const cont = document.getElementById('grupos');
+  const corr = D.corrimientos.filter(c=> F.finca==='TOTAL' || c.finca===F.finca);
+  document.getElementById('shGrupo').textContent =
+    F.finca==='TOTAL' ? 'snowchaser · resto' : `${F.finca} · snowchaser · resto`;
+  cont.textContent='';
+  ['SNOWCHASER','RESTO'].forEach(gr=>{
+    const titulo = gr==='SNOWCHASER'?'Snowchaser':'El resto';
+    const propios = corr.filter(c=>c.grupo===gr);
+    let plan,real,pctReal,pctNormal,adel;
+    if(F.finca==='TOTAL'){
+      const g = D.grupos.find(x=>x.grupo===gr);
+      plan=g.plan; real=g.real; pctReal=g.pct_real; pctNormal=g.pct_normal; adel=g.adelanto;
+    } else if(!propios.length){
+      const c = el('div','gcard');
+      c.innerHTML = `<div class="gt"><span class="gn">${titulo}</span></div>
+        <p style="color:var(--ink-3);font-size:13px;margin:10px 0 0">${F.finca} no tiene plan de este grupo.</p>`;
+      cont.append(c); return;
+    } else {
+      plan = propios.reduce((s,c)=>s+c.plan,0);
+      real = propios.reduce((s,c)=>s+c.real,0);
+      pctReal = plan>0?real/plan:0;
+      pctNormal = propios.reduce((s,c)=>s+c.pct_normal,0)/propios.length;
+      adel = propios.reduce((s,c)=>s+c.adelanto,0)/propios.length;
+    }
+    const atras = pctReal < pctNormal;
+    const base = F.finca==='TOTAL' ? D.plan_total : dato().plan;
+    const c = el('div','gcard');
+    c.innerHTML = `
+      <div class="gt"><span class="gn">${titulo}</span>
+        <span class="gp">${n0(plan)} kg · ${pc(plan/base,0)} del plan</span></div>
+      <div class="bar"><i style="width:${Math.min(100,pctReal*100).toFixed(1)}%"></i>
+        <b style="left:${Math.min(100,pctNormal*100).toFixed(1)}%" title="normal a esta altura"></b></div>
+      <div class="gl"><span>lleva ${pc(pctReal)}</span><span>normal ${pc(pctNormal)}</span></div>
+      <div style="margin-top:12px"><span class="chip ${atras?'dn':'up'}">${atras?'▼':'▲'} ${sg(adel)} sem</span>
+        <span style="font-size:12px;color:var(--ink-2);margin-left:8px">${atras?'atrasado':'adelantado'} · ${n0(real)} kg cosechados</span></div>`;
+    cont.append(c);
+  });
+
+  const t = document.getElementById('tCorr');
+  t.innerHTML = `<thead><tr><th>Campo</th><th>Grupo</th><th>Plan</th><th>Real sem ${CORTE}</th>
+    <th>% real</th><th>% normal</th><th>Corrimiento</th><th>Cómo se calibró</th></tr></thead>`;
+  const tb = el('tbody');
+  corr.forEach(c=>{
+    const cls = c.adelanto>=0.1?'up':(c.adelanto<=-0.1?'dn':'fl');
+    const ico = c.adelanto>=0.1?'▲':(c.adelanto<=-0.1?'▼':'=');
+    const tr = el('tr', c.finca===F.finca?'sel':'');
+    tr.innerHTML = `<td><span class="fn">${c.finca}</span></td>
+      <td style="text-align:left;color:var(--ink-2)">${c.grupo==='SNOWCHASER'?'Snowchaser':'Resto'}</td>
+      <td class="num">${n0(c.plan)}</td><td class="num">${n0(c.real)}</td>
+      <td class="num">${pc(c.pct_real)}</td><td class="num" style="color:var(--ink-2)">${pc(c.pct_normal)}</td>
+      <td><span class="chip ${cls}">${ico} ${sg(c.adelanto)} sem</span></td>
+      <td style="text-align:left;color:var(--ink-3);font-size:12px">${c.metodo}</td>`;
+    tb.append(tr);
+  });
+  t.append(tb);
+}
+
+function render(){
+  pintarFiltros(); pintarTiles(); pintarComp(); pintarVariedades(); pintarSemanas();
+  pintarProx(); pintarCurva(); pintarGrupos();
+}
+
+/* ---------------- estimación de cierre (no depende de los filtros) ---------------- */
+(function pintarEstimacion(){
+  const E = D.estimacion, H = D.historial_estimacion || [];
+  const sec = document.getElementById('estCard').closest('section');
+  if(!E){ sec.hidden = true; return; }
+  const M = v => (v/1e6).toLocaleString('es-AR',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const chip = (v, txt) => {
+    const c = v>=0.005?'up':(v<=-0.005?'dn':'fl');
+    return `<span class="chip ${c}">${v>0?'+':''}${(v*100).toLocaleString('es-AR',{maximumFractionDigits:0})}% ${txt}</span>`;
+  };
+  const ant = String(E.anterior);
+  document.getElementById('shEst').textContent = `con datos a la semana ${E.corte}`;
+  document.getElementById('legEstAnt').textContent = `${ant} real`;
+
+  const i = H.findIndex(h=>h.corte===E.corte);
+  const prev = i>0 ? H[i-1] : null;
+  const dSem = prev ? E.total - prev.total : null;
+  const peso = E.peso_cosechado;
+  document.getElementById('estCard').innerHTML = `
+    <div class="k">Cierre estimado 2026</div>
+    <div class="big">${M(E.total)} <span class="u">millones de kg</span></div>
+    <div class="rng">rango 80%: ${M(E.bajo)} – ${M(E.alto)} M</div>
+    <div class="chips2">${chip(E.total/D.plan_total-1,'vs Plan')}${chip(E.total/E.total_anterior-1,'vs '+ant)}</div>
+    <div class="ln">${dSem===null ? 'Primera semana con estimación.'
+      : `${dSem>=0?'Subió':'Bajó'} <b>${n0(Math.abs(dSem))} kg</b> contra la estimación con datos a la semana ${prev.corte}.`}</div>
+    <div class="ln" style="margin-top:14px">Cuánto pesa lo cosechado: <b>${pc(peso,0)}</b>
+      <div class="peso"><i style="width:${(peso*100).toFixed(1)}%"></i></div>
+      <span style="color:var(--ink-3);font-size:12px">${peso<0.5
+        ? `Todavía manda lo que dio ${ant}: el grueso va poco avanzado y el timing no se puede separar del volumen.`
+        : `Ya manda lo cosechado: el número depende cada vez menos de lo que dio ${ant}.`}
+      Con cada semana del grueso (el 50% acumulado cayó siempre entre la 41 y la 43) el rango se achica.</span></div>`;
+
+  // --- tabla por grupo ---
+  const tg = document.getElementById('tEstG');
+  tg.innerHTML = `<thead><tr><th>Grupo</th><th>Cosechado</th><th>Normal a sem ${E.corte}</th>
+    <th>${ant} a sem ${E.corte}</th><th>Por lo cosechado</th><th>Peso cosechado</th><th>Estimación</th><th>Rango 80%</th><th>${ant} real</th></tr></thead>`;
+  const tb = el('tbody');
+  ['SNOWCHASER','RESTO'].forEach(g=>{
+    const x = E.grupos[g];
+    const tr = el('tr');
+    tr.innerHTML = `<td><span class="fn">${g==='SNOWCHASER'?'Snowchaser':'El resto'}</span>
+        <span class="fl">${x.cosechado>0&&x.fraccion_anterior>0 ? `${sg((x.cosechado/(x.fraccion_anterior*x.real_anterior)-1)*100)}% vs ${ant} a la misma semana` : ''}</span></td>
+      <td class="num">${n0(x.cosechado)}</td>
+      <td class="num" style="color:var(--ink-2)">${x.fraccion_normal==null?'—':pc(x.fraccion_normal)}</td>
+      <td class="num" style="color:var(--ink-2)">${pc(x.fraccion_anterior)}</td>
+      <td class="num">${x.por_cosechado==null?'—':n0(x.por_cosechado)}</td>
+      <td class="num" style="color:var(--ink-2)">${pc(x.peso_cosechado,0)}</td>
+      <td class="num"><b>${n0(x.estimado)}</b></td>
+      <td class="num" style="color:var(--ink-2)">${n0(x.bajo)} – ${n0(x.alto)}</td>
+      <td class="num" style="color:var(--ink-2)">${n0(x.real_anterior)}</td>`;
+    tb.append(tr);
+  });
+  const tt = el('tr','tot');
+  tt.innerHTML = `<td>Total</td><td class="num">${n0(E.grupos.SNOWCHASER.cosechado+E.grupos.RESTO.cosechado)}</td>
+    <td></td><td></td><td></td><td class="num">${pc(peso,0)}</td><td class="num">${n0(E.total)}</td>
+    <td class="num">${n0(E.bajo)} – ${n0(E.alto)}</td><td class="num">${n0(E.total_anterior)}</td>`;
+  tb.append(tt); tg.append(tb);
+
+  // --- paso a paso ---
+  const cp = document.getElementById('estPasos');
+  const mas = v => '±' + pc(v,0);
+  ['SNOWCHASER','RESTO'].forEach(g=>{
+    const x = E.grupos[g], nom = g==='SNOWCHASER' ? 'Snowchaser' : 'El resto';
+    const fr = x.fracciones || [];
+    const usadas = fr.filter(f=>f.fraccion>0.005).map(f=>f.fraccion);
+    const fmin = usadas.length ? Math.min(...usadas) : 0, fmax = usadas.length ? Math.max(...usadas) : 0;
+    const sumaP = fr.reduce((s,f)=>s+f.peso,0) || 1;
+    const filas = fr.map(f=>`<tr class="${f.peso?'':'w0'}"><td>${f.anio}</td><td class="num">${pc(f.fraccion)}</td>
+      <td class="num">${f.peso ? pc(f.peso/sumaP,0) : 'sólo margen'}</td></tr>`).join('');
+    const cambios = (x.cambios_anuales||[]).map((c,k)=>`${fr[k+1]?fr[k+1].anio:''} ${sg(c*100)}%`).join(' · ');
+    const card = el('div','gcard');
+    card.innerHTML = `<div class="gt"><span class="gn">${nom}</span><span class="gp">${n0(x.estimado)} kg</span></div>
+      <ol class="pasos">
+        <li><span class="t">Lo cosechado</span>Hasta la semana ${E.corte} se cosecharon <span class="res">${n0(x.cosechado)} kg</span>.</li>
+        <li><span class="t">Qué parte de la campaña suele estar hecha a esta semana</span>
+          En los años anteriores, a la semana ${E.corte} ya se había cosechado:
+          <table class="fr"><thead><tr><th>Año</th><th>% de su total</th><th>Peso</th></tr></thead><tbody>${filas}</tbody></table>
+          Promedio ponderado (${ant} pesa la mitad): <span class="res">${x.fraccion_normal==null?'—':pc(x.fraccion_normal)}</span>.</li>
+        <li><span class="t">Proyección por lo cosechado</span>${x.por_cosechado==null
+          ? 'Todavía no hay cosecha suficiente para proyectar: se usa sólo el año pasado.'
+          : `${n0(x.cosechado)} ÷ ${pc(x.fraccion_normal)} = <span class="res">${n0(x.por_cosechado)} kg</span>.
+             Margen de error ${mas(x.incert_cosechado)}: según el año, a esta semana iba entre ${pc(fmin)} y ${pc(fmax)} hecho,
+             así que todavía no se puede separar si venimos atrasados o con menos kilos.`}</li>
+        <li><span class="t">Lo que dio el año pasado</span>Si 2026 repite ${ant}: <span class="res">${n0(x.real_anterior)} kg</span>.
+          No se le aplica tendencia: la caída de años anteriores fue sobre todo baja de lotes, y el área casi no cambió desde 2024.
+          Margen de error ${mas(x.incert_base)}: es cuánto varió de un año a otro (${cambios}).</li>
+        <li><span class="t">Se combinan</span>Pesa más la lectura con menos margen: <b>${pc(x.peso_cosechado,0)}</b> lo cosechado y
+          <b>${pc(1-x.peso_cosechado,0)}</b> ${ant}. Resultado: <span class="res">${n0(x.estimado)} kg</span>.</li>
+        <li><span class="t">Rango</span>Al combinar dos lecturas, el margen baja a ${mas(x.incert_final)}. Con 80% de probabilidad,
+          entre <span class="res">${n0(x.bajo)}</span> y <span class="res">${n0(x.alto)} kg</span>.</li>
+      </ol>`;
+    cp.append(card);
+  });
+  const S_ = E.grupos.SNOWCHASER, R_ = E.grupos.RESTO;
+  document.getElementById('estTotal').innerHTML = `<b>Total:</b> ${n0(S_.estimado)} (Snowchaser) + ${n0(R_.estimado)} (resto) =
+    <b class="num">${n0(E.total)} kg</b>. El rango suma los extremos de cada grupo (${n0(E.bajo)} – ${n0(E.alto)}), como si los dos
+    se desviaran para el mismo lado: queda más ancho que la realidad, a propósito.<br>
+    <span style="color:var(--ink-3)">Qué lo va a mover: cada semana cerrada suma cosecha real, la parte "normal" crece y el margen
+    de lo cosechado se achica, así que su peso sube solo hasta que pasa a mandar. No hay nada que se ajuste a mano.</span>`;
+
+  // --- escala: la estimación contra las otras referencias ---
+  (function(){
+    const mod = D.proyeccion ? D.proyeccion.mezcla : null;
+    const vals = [E.bajo, E.alto, E.total_anterior, D.plan_total].concat(mod ? [mod] : []);
+    const paso = 100000;
+    const lo = Math.floor(Math.min(...vals)*0.97/paso)*paso, hi = Math.ceil(Math.max(...vals)*1.02/paso)*paso;
+    const pos = v => ((v-lo)/(hi-lo)*100).toFixed(1);
+    const refs = [
+      mod ? {v:mod, t:`modelo ${M(mod)}`, c:'var(--modelo)'} : null,
+      {v:E.total_anterior, t:`${ant} real ${M(E.total_anterior)}`, c:'var(--ink-2)'},
+      {v:D.plan_total, t:`Plan ${M(D.plan_total)}`, c:'var(--ink-3)'},
+    ].filter(Boolean).sort((a,b)=>a.v-b.v);
+    // Dos etiquetas muy cerca se pisan: la segunda baja debajo del eje.
+    let ult = -99;
+    const pts = refs.map(r=>{
+      const p = +pos(r.v), abajo = p-ult < 16; ult = abajo ? ult : p;
+      return abajo
+        ? `<div class="pt" style="left:${p}%;top:30px;flex-direction:column-reverse"><span style="margin-top:4px">${r.t}</span><i style="background:${r.c};margin:0"></i></div>`
+        : `<div class="pt" style="left:${p}%"><span>${r.t}</span><i style="background:${r.c}"></i></div>`;
+    }).join('');
+    let ticks = '';
+    for(let v=lo; v<=hi+1; v+=paso) ticks += `<span style="left:${pos(v)}%">${M(v)}</span>`;
+    document.getElementById('estEscala').innerHTML = `<div class="k">La estimación contra las otras referencias · millones de kg</div>
+      <div class="eje"><div class="base"></div>
+        <div class="banda" style="left:${pos(E.bajo)}%;width:${(pos(E.alto)-pos(E.bajo)).toFixed(1)}%" title="rango 80%"></div>
+        ${pts}<div class="pt est" style="left:${pos(E.total)}%"><i></i><b>${M(E.total)}</b></div></div>
+      <div class="ticks">${ticks}</div>`;
+  })();
+
+  // --- dónde estamos ---
+  const tot26 = S_.cosechado + R_.cosechado, tot25 = S_.acum_anterior + R_.acum_anterior;
+  const dv = (a,b) => b>0 ? sg((a/b-1)*100)+'%' : '—';
+  const shareR = R_.real_anterior / E.total_anterior;
+  document.getElementById('estDonde').innerHTML = `Hasta la semana ${E.corte} se cosecharon <b>${n0(tot26)} kg</b>,
+    el ${pc(tot26/E.total)} de lo que estimamos para la campaña. Contra la misma semana de ${ant} vamos <b>${dv(tot26,tot25)}</b>:
+    Snowchaser ${dv(S_.cosechado,S_.acum_anterior)} y el resto de las variedades ${dv(R_.cosechado,R_.acum_anterior)}.
+    El resto fue el ${pc(shareR,0)} de lo cosechado en ${ant}: es el que define el total.`;
+
+  // --- por qué la base es el año pasado ---
+  const AR = E.area || [];
+  if(AR.length >= 2){
+    const a1 = AR[AR.length-1], a0 = AR[AR.length-2], ai = AR[0];
+    const pv = (a,b) => sg((a/b-1)*100)+'%';
+    document.getElementById('estAreaT').textContent = `Por qué la base es ${ant}`;
+    document.getElementById('estAreaSub').innerHTML = `De ${ai.anio} a ${a1.anio} el área con cosecha pasó de ${n0(ai.ha)} a
+      ${n0(a1.ha)} ha (${pv(a1.ha,ai.ha)}) y los kilos de ${M(ai.kg)} a ${M(a1.kg)} millones (${pv(a1.kg,ai.kg)}).
+      Buena parte de la caída fue por lotes dados de baja, que ya no están. Por eso no se proyecta la tendencia:
+      se toma lo que dio ${ant} con el área actual.`;
+    document.getElementById('tEstArea').innerHTML = `<thead><tr><th></th>${AR.map(a=>`<th>${a.anio}</th>`).join('')}</tr></thead>
+      <tbody><tr><td>Hectáreas con cosecha</td>${AR.map(a=>`<td class="num">${n0(a.ha)}</td>`).join('')}</tr>
+      <tr><td>Kilos (millones)</td>${AR.map(a=>`<td class="num">${M(a.kg)}</td>`).join('')}</tr>
+      <tr><td>Kg por hectárea</td>${AR.map(a=>`<td class="num">${a.kg_ha==null?'—':n0(a.kg_ha)}</td>`).join('')}</tr></tbody>`;
+    const dha = a1.ha/a0.ha-1, dkg = a1.kg/a0.kg-1;
+    document.getElementById('estAreaNota').innerHTML = Math.abs(dha) < 0.05 && dkg < -0.05
+      ? `Salvedad: entre ${a0.anio} y ${a1.anio} el área cambió ${pv(a1.ha,a0.ha)} y los kilos ${pv(a1.kg,a0.kg)}. Esa caída fue de
+         rinde por hectárea, no de lotes. Usar ${ant} como base supone que 2026 rinde parecido: si ${ant} fue un mal año y 2026 se
+         recupera, la estimación queda corta.`
+      : `Entre ${a0.anio} y ${a1.anio} el área cambió ${pv(a1.ha,a0.ha)} y los kilos ${pv(a1.kg,a0.kg)}.`;
+  } else {
+    document.getElementById('estAreaBloque').hidden = true;
+  }
+
+  // --- qué puede mover el número ---
+  const cards = [];
+  const tag = (sube) => `<span class="chip ${sube?'up':'dn'}">${sube?'▲ sube':'▼ baja'}</span>`;
+  const conF = FINCAS.map(f=>({f, b:D.por_finca[f]})).filter(x=>x.b.acum25>5000);
+  const peor = conF.sort((a,b)=>(a.b.acum26/a.b.acum25)-(b.b.acum26/b.b.acum25))[0];
+  [['RESTO','El resto de las variedades'],['SNOWCHASER','Snowchaser']].forEach(([g,nom])=>{
+    const x = E.grupos[g];
+    if(x.si_iguala_anterior==null) return;
+    const nuevo = E.total - x.estimado + x.si_iguala_anterior;
+    if(Math.abs(nuevo/E.total-1) < 0.01) return;
+    const atras = x.cosechado < x.acum_anterior;
+    let det = '';
+    if(g==='RESTO' && peor && peor.b.acum26 < peor.b.acum25){
+      const i = ix(CORTE);
+      det = ` Casi todo el atraso está en ${peor.f}: va ${dv(peor.b.acum26,peor.b.acum25)} contra ${ant}, aunque en la semana
+        ${CORTE} hizo ${n0(peor.b.real26[i])} kg contra ${n0(peor.b.real25[i])} de ${ant}.`;
+    }
+    cards.push(`<h3>${nom} ${atras?'recupera el atraso':'pierde el adelanto'} ${tag(atras)}</h3>
+      <p>Hoy va ${dv(x.cosechado,x.acum_anterior)} contra ${ant} a la misma semana. Si se pusiera al mismo ritmo que ${ant},
+      la estimación pasaría a <b>${M(nuevo)} M</b>.${det}</p>`);
+  });
+  if(AR.length >= 2){
+    const a1 = AR[AR.length-1], a0 = AR[AR.length-2];
+    if(a1.kg_ha && a0.kg_ha && a1.kg_ha < a0.kg_ha){
+      cards.push(`<h3>El rinde vuelve al de ${a0.anio} ${tag(true)}</h3>
+        <p>En ${a1.anio} se cosecharon ${n0(a1.kg_ha)} kg/ha contra ${n0(a0.kg_ha)} en ${a0.anio}. Con el área de ${a1.anio} y el rinde
+        de ${a0.anio} serían ${M(a1.ha*a0.kg_ha)} M: es un techo de referencia, no un pronóstico.</p>`);
+    }
+  }
+  const semU = D.por_finca.TOTAL.real26[ix(CORTE)];
+  cards.push(`<h3>La semana ${CORTE} fue un pico ${tag(false)}</h3>
+    <p>Si la semana ${CORTE+1} queda muy por debajo de los ${n0(semU)} kg de la ${CORTE}, el arranque no se sostiene y el
+    número se acerca a la parte de abajo del rango (${M(E.bajo)} M).</p>`);
+  const rec = D.avisos.map(t=>t.match(/(\w+) tiene recibidos \+([\d.,]+)%/)).filter(Boolean);
+  if(rec.length){
+    cards.push(`<h3>Kilos recibidos <span class="chip fl">medición</span></h3>
+      <p>Todo esto es en kilos cosechados. En recibidos el número es más alto:
+      ${rec.map(m=>`${m[1]} ${m[2].replace('.',',')}%`).join(', ')} arriba (el histórico da +2%).</p>`);
+  }
+  const cm = document.getElementById('estMueve');
+  cards.forEach((h,k)=>{
+    const c = el('div','gcard mueve'); c.innerHTML = h;
+    if(cards.length%2 && k===cards.length-1) c.style.gridColumn = '1 / -1';  // que ninguna quede sola a media fila
+    cm.append(c);
+  });
+
+  // --- historial semana a semana (lo más nuevo arriba) ---
+  const th = document.getElementById('tEstH');
+  th.innerHTML = `<thead><tr><th>Datos a la semana</th><th>Estimación</th><th>Rango 80%</th><th>Cambio</th>
+    <th>Peso cosechado</th><th>Modelo (proyección)</th><th>Origen</th></tr></thead>`;
+  const hb = el('tbody');
+  const inv = [...H].reverse();
+  inv.forEach((h,k)=>{
+    const p = inv[k+1];
+    const d = p ? h.total - p.total : null;
+    const r = el('tr', h.corte===E.corte ? 'curso' : '');
+    r.innerHTML = `<td><span class="fn">Semana ${h.corte}</span></td>
+      <td class="num"><b>${n0(h.total)}</b></td>
+      <td class="num" style="color:var(--ink-2)">${n0(h.bajo)} – ${n0(h.alto)}</td>
+      <td class="num">${d===null?'—':(d>=0?'+':'−')+n0(Math.abs(d))}</td>
+      <td class="num" style="color:var(--ink-2)">${pc(h.peso_cosechado,0)}</td>
+      <td class="num" style="color:var(--ink-2)">${h.modelo==null?'—':n0(h.modelo)}</td>
+      <td><span class="est ${h.origen==='corrida'?'c':''}" title="${h.origen==='corrida'?'calculada en la corrida semanal':'recalculada después con el informe actual: las semanas cerradas no cambian entre informes'}">${h.origen==='corrida'?'corrida':'reconstruida'}</span></td>`;
+    hb.append(r);
+  });
+  th.append(hb);
+
+  // --- gráfico de evolución ---
+  if(!H.length) return;
+  const svg = document.getElementById('svgEst'), tip = document.getElementById('tipEst');
+  const W=700, Ht=270, L=52, R=92, T=14, B=30;
+  const xs = H.map(h=>h.corte);
+  const x0 = Math.min(...xs), x1 = Math.max(Math.max(...xs), x0+5);
+  const vals = H.flatMap(h=>[h.bajo,h.alto].concat(h.modelo==null?[]:[h.modelo])).concat([D.plan_total,E.total_anterior]);
+  const paso = 100000;
+  const y0 = Math.floor(Math.min(...vals)*0.97/paso)*paso, y1 = Math.ceil(Math.max(...vals)*1.02/paso)*paso;
+  const X = s => L + (s-x0)/(x1-x0)*(W-L-R);
+  const Y = v => T + (1-(v-y0)/(y1-y0))*(Ht-T-B);
+  let g = '';
+  for(let v=y0; v<=y1+1; v+=paso){
+    g += `<line x1="${L}" x2="${W-R}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}" stroke="var(--line)"/>
+      <text x="${L-8}" y="${(Y(v)+4).toFixed(1)}" text-anchor="end" font-size="11" fill="var(--ink-3)" font-family="var(--mono)">${M(v)}</text>`;
+  }
+  for(let s=x0; s<=x1; s++){
+    g += `<text x="${X(s).toFixed(1)}" y="${Ht-10}" text-anchor="middle" font-size="11" fill="var(--ink-3)" font-family="var(--mono)">${s}</text>`;
+  }
+  const ref = (v, color, dash, txt) => `<line x1="${L}" x2="${W-R}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}" stroke="${color}" stroke-width="${dash?1.5:2}" ${dash?'stroke-dasharray="4 3"':''}/>
+      <text x="${W-R+6}" y="${(Y(v)+4).toFixed(1)}" font-size="11" fill="${color}" font-family="var(--mono)">${txt} ${M(v)}</text>`;
+  g += ref(D.plan_total, 'var(--ink-3)', true, 'Plan');
+  g += ref(E.total_anterior, 'var(--pasado)', false, ant);
+  if(H.length>1){
+    const top = H.map(h=>`${X(h.corte).toFixed(1)},${Y(h.alto).toFixed(1)}`).join(' ');
+    const bot = [...H].reverse().map(h=>`${X(h.corte).toFixed(1)},${Y(h.bajo).toFixed(1)}`).join(' ');
+    g += `<polygon points="${top} ${bot}" fill="var(--real-wash)"/>`;
+    g += `<path d="${H.map((h,k)=>`${k?'L':'M'}${X(h.corte).toFixed(1)},${Y(h.total).toFixed(1)}`).join('')}" fill="none" stroke="var(--real)" stroke-width="2.5" stroke-linejoin="round"/>`;
+  }
+  H.forEach(h=>{
+    if(h.modelo!=null) g += `<circle cx="${X(h.corte).toFixed(1)}" cy="${Y(h.modelo).toFixed(1)}" r="4" fill="var(--modelo)"/>`;
+    const fin = h.corte===E.corte;
+    g += `<circle cx="${X(h.corte).toFixed(1)}" cy="${Y(h.total).toFixed(1)}" r="${fin?4.5:3}" fill="${h.origen==='corrida'?'var(--real)':'var(--surface)'}" stroke="var(--real)" stroke-width="2"/>`;
+  });
+  const u = H[H.length-1];
+  g += `<text x="${X(u.corte).toFixed(1)}" y="${(Y(u.total)-10).toFixed(1)}" text-anchor="middle" font-size="12" font-weight="600" fill="var(--real)" font-family="var(--mono)">${M(u.total)}</text>`;
+  g += `<line id="xhEst" x1="0" x2="0" y1="${T}" y2="${Ht-B}" stroke="var(--ink-3)" stroke-width="1" opacity="0"/>`;
+  svg.innerHTML = g;
+  const xh = svg.querySelector('#xhEst');
+  svg.onmousemove = ev => {
+    const bb = svg.getBoundingClientRect();
+    const sx = (ev.clientX-bb.left)/bb.width*W;
+    let h = H[0]; H.forEach(c=>{ if(Math.abs(X(c.corte)-sx) < Math.abs(X(h.corte)-sx)) h=c; });
+    xh.setAttribute('x1',X(h.corte)); xh.setAttribute('x2',X(h.corte)); xh.setAttribute('opacity','1');
+    tip.innerHTML = `<div class="tt">datos a la sem ${h.corte}${h.origen==='corrida'?'':' · reconstruida'}</div>
+      <div class="tr"><span>Estimación</span><span>${n0(h.total)}</span></div>
+      <div class="tr"><span>Rango</span><span>${M(h.bajo)}–${M(h.alto)} M</span></div>
+      ${h.modelo==null?'':`<div class="tr"><span>Modelo</span><span>${n0(h.modelo)}</span></div>`}
+      <div class="tr"><span>Peso cosechado</span><span>${pc(h.peso_cosechado,0)}</span></div>`;
+    const px = X(h.corte)/W*bb.width;
+    tip.style.left = Math.min(Math.max(px+12, 0), bb.width-170)+'px';
+    tip.style.top = '10px'; tip.style.opacity = 1;
+  };
+  svg.onmouseleave = ()=>{ tip.style.opacity=0; xh.setAttribute('opacity','0'); };
+})();
+
+/* ---------------- lo que no depende de los filtros ---------------- */
+document.getElementById('hdrSem').textContent = P
+  ? `semana ${CORTE} cerrada · semana ${P.semana} en curso · datos al ${D.generado}`
+  : `semana ${CORTE} cerrada · datos al ${D.generado}`;
+document.getElementById('hdrTag').textContent = `meseta sem ${D.meseta.ini}–${D.meseta.fin}`;
+
+(function(){
+  const ul = document.getElementById('avisos');
+  const grave = t => /fuera de las semanas|recibidos|INCOMPLETA|Guardarra/i.test(t);
+  [...D.avisos].sort((a,b)=>(grave(b)?1:0)-(grave(a)?1:0)).forEach(t=>{
+    const li = el('li');
+    li.innerHTML = `<span class="ic ${grave(t)?'w':'i'}">${grave(t)?'REVISAR':'NOTA'}</span><span>${t}</span>`;
+    ul.append(li);
+  });
+  document.getElementById('shAv').textContent = `${D.avisos.length} avisos`;
+})();
+
+(function(){
+  const p = D.proyeccion, d = D.desvio;
+  const hs = Object.entries(D.clima.hs_frio).map(([a,v])=>`${a}: ${n0(v)}`).join(' · ');
+  document.getElementById('pie').innerHTML = `
+    <p><b>Volumen.</b> La calibración anterior esperaba ${n0(d.modelo_anterior)} kg a la semana ${CORTE}
+    y se cosecharon ${n0(d.real)}: iba ${pc(d.pct)} por encima de lo real. La recalibrada queda en
+    ${n0(d.recalibrado)} kg. A este ritmo la campaña cerraría entre <b>${n0(p.mezcla)}</b> y
+    <b>${n0(p.compania)} kg</b> — según con qué año se la compare, entre ${n0(p.min)} y ${n0(p.max)} —
+    contra ${n0(D.plan_total)} del Plan. Ese número mezcla atraso con menor volumen: mientras el grueso
+    no arranque no se pueden separar. El total del modelo respeta el Plan porque es el número aprobado.</p>
+    <p><b>Cómo se arma.</b> El volumen sale del Plan 2026 por finca y variedad y no se ajusta. La forma
+    sale del histórico real 2023-2025 por finca y variedad, ponderado 1/2/3. El corrimiento se mide por
+    finca y grupo de variedad preguntando en qué semana la curva histórica llegaba al mismo porcentaje
+    acumulado que ya se cosechó. Los filtros de arriba no recalibran nada: recortan la misma curva.</p>
+    <p><b>Clima.</b> Horas frío &lt;7 °C por año — ${hs}. Último dato ${D.clima.ultimo} (${D.clima.origen}).
+    El clima explica el mecanismo pero no predice el timing: se probaron cuatro predictores contra siete
+    métricas sobre cinco años y ninguna correlación resultó significativa.</p>
+    <p style="color:var(--ink-3)">Generado el ${D.generado} con los datos hasta la semana ${CORTE}.
+    Se actualiza cada semana sobre este mismo link.</p>`;
+})();
+
+render();
+</script>
+
+</body>
+</html>
